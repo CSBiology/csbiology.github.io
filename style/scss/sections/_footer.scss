@@ -1,0 +1,57 @@
+.footer {
+    padding: 1.25rem 0 5rem;
+    background: $color-black;
+    color: $color-lightblue;
+    font-family: $font-secondary;
+    font-size: .625rem;
+    text-transform: uppercase;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    color: rgba($color-lightblue, .8);
+
+    @include min(40em) {
+        padding-bottom: 1.25rem;
+    }
+    
+    .copyright {
+        width: 100%;
+        margin-bottom: .3rem;
+        text-align: center;
+
+        @include min(40em) {
+            width: 50%;
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+
+
+    .design {
+        width: 100%;
+        text-align: center;
+
+        @include min(40em) {
+            width: 50%;
+            text-align: right;
+        }
+
+        a {
+            color: inherit;
+            transition: color .2s ease;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        svg {
+            display: inline;
+            width: 1rem;
+            vertical-align: middle;
+
+            path {
+                fill: currentColor;
+            }
+        }
+    }
+}

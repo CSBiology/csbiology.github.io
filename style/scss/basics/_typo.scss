@@ -1,0 +1,31 @@
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+
+    @include min(40em) {
+        font-size: 2rem;
+    }
+}
+
+
+p {
+    margin: 0 0 1rem 0;
+    font-size: .87rem;
+    line-height: 1.6;
+
+    @include min(40em) {
+        font-size: 1rem;
+    }
+}
+
+.show-more {
+    display: block;
+    padding: 1em;
+    margin: 0 auto;
+    color: $color-secondary;
+}

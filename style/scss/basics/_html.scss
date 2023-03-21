@@ -1,0 +1,63 @@
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    color: $color-blue;
+    background-color: #fff;
+    font-size: 100%;
+    font-family: $font-primary;
+    line-height: normal;
+
+    &:before {
+        content: "smartphone";
+        display: none;
+    }
+
+    @include min(30em) {
+        &:before {
+          content: "tablet";
+        }
+    }
+
+    @include min(40em) {
+        &:before {
+          content: "desktop";
+        }
+    }
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.unveiled {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+// See:
+// * https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}
