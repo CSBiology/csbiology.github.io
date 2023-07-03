@@ -38,10 +38,12 @@ jobs:
         run: dotnet tool restore
 
       - name: Setup Env Variable
-        run: set OLAT_TOKEN=${{ secrets.OLAT_TOKEN }}
+        run: set 
 
       - name: Build
         run: npm run build
+        env:
+            OLAT_TOKEN: ${{ secrets.OLAT_TOKEN }}
         
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4

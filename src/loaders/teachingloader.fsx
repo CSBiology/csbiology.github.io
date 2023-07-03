@@ -107,19 +107,24 @@ let tryGetTitle      = tryGet "title"
 let tryGetTime       = tryGet "time"
 
 let password = 
-    try //read password from file
-        File.ReadAllText "./loaders/olat.p"
-    with
-        | _ -> 
-            let envVars = 
-                System.Environment.GetEnvironmentVariables()
-                |> Seq.cast<System.Collections.DictionaryEntry>
-                |> Seq.map (fun d -> d.Key :?> string, d.Value :?> string)
-                |> dict
-            // tokenName must be synced with .github/workflow/build.gh-pages => name: Setup Env Variable
-            let tokenName = "OLAT_TOKEN"
-            if envVars.ContainsKey tokenName |> not then failwith "Could not find Olat token as environmental variable!"
-            envVars.[tokenName]
+    let path =  "./loaders/olat.p"
+    let fileExists = File.Exists path
+    if fileExists then //read password from file
+        printfn ".env file found!"
+        File.ReadAllText path
+    else
+        printfn "No .env file found!"
+        let envVars = 
+            System.Environment.GetEnvironmentVariables()
+            |> Seq.cast<System.Collections.DictionaryEntry>
+            |> Seq.map (fun d -> d.Key :?> string, d.Value :?> string)
+            |> dict
+        // tokenName must be synced with .github/workflow/build.gh-pages => name: Setup Env Variable
+        let tokenName = "OLAT_TOKEN"
+        let containsKey = envVars.ContainsKey tokenName
+        if not containsKey then
+            printfn "Uanble to find Olat token as environmental variable!"
+        envVars.[tokenName].Trim()
 
 let getMetadataBy (repoEntryKey:string) = 
     let uri = sprintf "https://olat.vcrp.de/restapi/repo/entries/%s/metadata" repoEntryKey
