@@ -10,13 +10,11 @@ let generate (ctx : SiteContents) (_: string) =
         ];
         div [Class "welcome__overlay"] [];
         video [] [
-            source [Src "style/video/mp4/Working-Space.mp4"; Type "video/mp4"];
-            source [Src "style/video/mp4/Working-Space.ogv"; Type "video/mp4"];
-            source [Src "style/video/mp4/Working-Space.webm"; Type "video/mp4"];
-            img [Src "style/video/snapshots/Working-Space.jpg"; Alt ""] 
-
-        ]
-        
+            source [Src "./style/video/mp4/Working-Space.mp4"; Type "video/mp4"];
+            source [Src "./style/video/ogv/Working-Space.ogv"; Type "video/mp4"];
+            source [Src "./style/video/webm/Working-Space.webm"; Type "video/webm"];
+            img [Src "./style/video/snapshots/Working-Space.jpg"; Alt ""] 
+        ]    
     ]
     
     

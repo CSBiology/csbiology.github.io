@@ -7,15 +7,13 @@ let scaffold (ctx : SiteContents) bodyCnt =
     html [] [
         head [] [
             meta [CharSet "utf-8"]
-            meta [Name "viewport"; Content "width=device-width, initial-scale=1"]
             title [] [!! "CSB - RPTU Kaiserslautern"]
-            meta [Name "description"; Content "Computational Systems Biology at RPTU Kaiserslautern, Germany"]
+            link [Rel "icon"; Type "image/png"; Href "./content/images/favicon.png"]
+            meta [Name "viewport"; Content "width=device-width, initial-scale=1"]
+            meta [Name "description"; Content "CSB (Computational Systems Biology) at RPTU Kaiserslautern, Germany"]
             script [Defer true; Src "https://kit.fontawesome.com/0d3e0ea7a6.js"; CrossOrigin "anonymous"] []
-            link [Rel "stylesheet"; Type "text/css"; Href "style/css/main.min.css"]
-             
-
+            link [Rel "stylesheet"; Type "text/css"; Href "style/css/main.css"]
         ]
-        
         body [] [
           header [Class "header"] [
             div [Class "container"] [
@@ -46,7 +44,6 @@ let scaffold (ctx : SiteContents) bodyCnt =
           main [Class "content"] [
             // bodyCnt
             yield! bodyCnt
-          
           ]
           
           //<!-- jQuery Slim -->
@@ -58,7 +55,7 @@ let scaffold (ctx : SiteContents) bodyCnt =
           //<!-- Main Js -->
           script [Src "style/js/main.js"] []
 
-          //<!-- Webfont Loader -->
+        //   <!-- Webfont Loader -->
           script [] [
                       !! """
                         WebFontConfig = {

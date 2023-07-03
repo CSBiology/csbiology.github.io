@@ -1,3 +1,4 @@
+@use 'sass:math';
 .content {
     background: #efefef;
 }
@@ -190,7 +191,7 @@
     }
 
     .research__text {
-        max-width: $grid-max-width / 2;
+        max-width: math.div($grid-max-width, 2);
         margin-left: 0;
     }
 

@@ -79,9 +79,7 @@ let removeHtmlTags (htmlString:string) =
 let removeHtml_P_Tags (htmlString:string) =
     htmlString.Replace("<p>","").Replace("</p>","")
 
-
 let rx = Regex(@"^(?<institution>RPTU KL|RPTU KL\s)[|](?<courseType>[^|]*)[|](?<title>[^|]*)[|](?<time>.*)", RegexOptions.Compiled)
-
 
 let parseTitel input =
     let matchDictionary = new Dictionary<string,string list>()    
@@ -108,7 +106,20 @@ let tryGetCourseType = tryGet "courseType"
 let tryGetTitle      = tryGet "title"
 let tryGetTime       = tryGet "time"
 
-let password = File.ReadAllText "./loaders/olat.p"
+let password = 
+    try //read password from file
+        File.ReadAllText "./loaders/olat.p"
+    with
+        | _ -> 
+            let envVars = 
+                System.Environment.GetEnvironmentVariables()
+                |> Seq.cast<System.Collections.DictionaryEntry>
+                |> Seq.map (fun d -> d.Key :?> string, d.Value :?> string)
+                |> dict
+            // tokenName must be synced with .github/workflow/build.gh-pages => name: Setup Env Variable
+            let tokenName = "OLAT_TOKEN"
+            if envVars.ContainsKey tokenName |> not then failwith "Could not find Olat token as environmental variable!"
+            envVars.[tokenName]
 
 let getMetadataBy (repoEntryKey:string) = 
     let uri = sprintf "https://olat.vcrp.de/restapi/repo/entries/%s/metadata" repoEntryKey

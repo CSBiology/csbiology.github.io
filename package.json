@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "The csb website",
   "scripts": {
-    "fornax": "cd ./src && dotnet fornax watch"
+    "fornax": "cd ./src && dotnet fornax watch",
+    "build": "cd ./src && dotnet fornax build"
   },
   "repository": {
     "type": "git",
