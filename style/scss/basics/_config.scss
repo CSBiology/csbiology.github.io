@@ -1,0 +1,33 @@
+@use 'sass:math';
+/*$color-black: #232426;
+$color-grey: #ccc;
+$color-lightgrey: #efefef;
+
+$color-lightblue: #a7b7c6;
+$color-blue: #44546a;
+$color-orange: #ed7d31;
+
+$color-primary: $color-orange;
+$color-secondary: $color-blue;*/
+
+$color-black: #232426;
+$color-grey: #ccc;
+$color-lightgrey: #efefef;
+
+$color-lightblue: #d0d6dd;
+$color-blue: #507289;
+$color-orange: #ed7c31;
+
+$color-primary: $color-orange;
+$color-secondary: $color-blue;
+
+$grid-max-width: 62.5rem;
+$grid-columns: 12;
+$grid-gutter: math.div(1, 4);
+
+$font-primary: "Lora", Times, serif;
+$font-secondary: "Montserrat", Helvetica Neue, Helvetica, Arial, serif;
+
+$color-orcid: #A6CE39;
+$color-twitter: #1DA1F2;
+$color-github: #333;
