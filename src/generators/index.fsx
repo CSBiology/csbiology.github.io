@@ -17,7 +17,7 @@ let generate (ctx : SiteContents) (projectRoot: string) (page: string) =
         Research.generate ctx ""
         Team.generate ctx ""
         Publications.generate ctx ""
-        // Teaching.generate ctx ""
+        Teaching.generate ctx ""
         Contact.generateGitHub ctx ""
         Contact.generate ctx ""
         Foot.generate ctx ""

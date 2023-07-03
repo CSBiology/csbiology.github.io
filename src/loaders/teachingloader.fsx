@@ -108,12 +108,13 @@ let tryGetCourseType = tryGet "courseType"
 let tryGetTitle      = tryGet "title"
 let tryGetTime       = tryGet "time"
 
+let password = File.ReadAllText "./loaders/olat.p"
 
 let getMetadataBy (repoEntryKey:string) = 
     let uri = sprintf "https://olat.vcrp.de/restapi/repo/entries/%s/metadata" repoEntryKey
     http {
         GET uri
-        AuthorizationUserPw  "muehlhaus@bio.uni-kl.de" (File.ReadAllText "./loaders/olat.p")        
+        AuthorizationUserPw  "muehlhaus@bio.uni-kl.de" password        
         Accept "application/json"               
     }
     |> Request.send
@@ -122,7 +123,7 @@ let getMetadataBy (repoEntryKey:string) =
 let response = 
     http {
         GET "https://olat.vcrp.de/restapi/users/2589917519/courses/owned?start=0&limit=25"
-        AuthorizationUserPw  "muehlhaus@bio.uni-kl.de" (File.ReadAllText "./loaders/olat.p")        
+        AuthorizationUserPw  "muehlhaus@bio.uni-kl.de" password        
         Accept "application/json"                     
     }
     |> Request.send
