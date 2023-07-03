@@ -23,8 +23,6 @@ open Genometric
 //         System.IO.File.WriteAllLines ("C:/Users/muehl/Desktop/bib/"+fn', gr)
 //         )
 
-
-
 type Publication = {
     Publisher : string
     Title     : string
@@ -33,7 +31,7 @@ type Publication = {
     Featured  : bool
 }
 
-let contentDir = "D:/Source/csbsite/content/publications/"
+let contentDir = "content/publications/"
 
 let tryParse (parser:BibitemParser.Parser) (bibFileNamne:string) =
     let text = File.ReadAllText bibFileNamne
@@ -98,14 +96,6 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
 
     // siteContent.Add({disableLiveRefresh = false})
     siteContent
-
-
-loader "" 
-
-
-
-
-
 
 // <div class="publication publication--featured">
 //     <div class="publication__publisher">Plant Physiology</div>

@@ -8,7 +8,6 @@
 open System.IO
 open FsHttp
 
-
 type Teaching = {
     Id         : string // repoEntryKey
     ExternalRef: string // <externalRef>BIO-BTE-12-V-4</externalRef>

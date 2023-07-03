@@ -66,7 +66,7 @@ let tryParseAluminiDetails name (str:string) =
         None
 
 
-let contentDir = "D:/Source/csbsite/content/team/"
+let contentDir = "content/team/"
 let imgDir = "content/images/team/"
 
 let isSeparator (input : string) =
