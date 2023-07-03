@@ -41,7 +41,7 @@ jobs:
         run: set OLAT_TOKEN=${{ secrets.OLAT_TOKEN }}
 
       - name: Build
-        run: npm run fornax
+        run: npm run build
         
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
