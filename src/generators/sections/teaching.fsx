@@ -44,8 +44,8 @@ let generate (ctx : SiteContents) (_: string) =
                 li [] [ a [Href "#tab_winter_semester"; Class "btn btn--small"] [!!"Winter semester"]]
             ]
             
-            div [Class "tabs"; Id "teaching-tabs"] [
-                div [Class "tab tab--active"; Id "tab_all_semesters"] [
+            div [Class "csb-tabs"; Id "teaching-csb-tabs"] [
+                div [Class "csb-tab csb-tab--active"; Id "tab_all_semesters"] [
                     div [Class "lecture-container"] [
                         yield! lexs |> List.map layoutLecture     
                     ]

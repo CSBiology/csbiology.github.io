@@ -94,20 +94,66 @@ $(document).ready(function() {
         }
     });
 
-    function onScroll(){
-        scrollTop = $(window).scrollTop();
+    // // Set navbar `header--fixed` on scroll. Making it fixed snap to top 
+    // function onScroll(){
+    //     scrollTop = $(window).scrollTop();
 
-        if ( !$('.header').hasClass('header--fixed') && scrollTop > $('.header').height() ){
-            $('.header').addClass('header--fixed');
-        }else if (scrollTop <= $('.header').height()){
-            $('.header--fixed').removeClass('header--fixed');
-        }
-    }
+    //     if ( !$('.header').hasClass('header--fixed') && scrollTop > $('.header').height() ){
+    //         $('.header').addClass('header--fixed');
+    //     }else if (scrollTop <= $('.header').height()){
+    //         $('.header--fixed').removeClass('header--fixed');
+    //     }
+    // }
 
-    $(window).scroll(onScroll).scroll();
+    // $(window).scroll(onScroll).scroll();
 
-    $(window).resize(function () {
-        breakpoint.refreshValue();
-    }).resize();
-    
+    // $(window).resize(function () {
+    //     breakpoint.refreshValue();
+    // }).resize();
 });
+
+/// Add toggle to all navbar-burgers
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+  
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+  
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  
+});
+
+/// START: change csb-navbar color on scroll to top
+let scrollpos = window.scrollY
+const rptu = document.getElementById("rptu-navbar")
+const csb = document.getElementById("csb-navbar")
+let scrollChange = rptu.offsetHeight
+const add_class_on_scroll = () => 
+    csb.classList.add("is-link")
+    csb.classList.remove("is-light")
+const remove_class_on_scroll = () => 
+    csb.classList.remove("is-link")
+    csb.classList.add("is-light")
+
+document.addEventListener('DOMContentLoaded', function() {
+    scrollpos = window.scrollY;
+    if (scrollpos >= scrollChange) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+}, {once: true});
+
+window.addEventListener('scroll', function() { 
+  scrollpos = window.scrollY;
+  if (scrollpos >= scrollChange) { add_class_on_scroll() }
+  else { remove_class_on_scroll() }
+})
+/// End: change csb-navbar color on scroll to top

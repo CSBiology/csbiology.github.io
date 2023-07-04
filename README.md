@@ -1,18 +1,17 @@
 # csbiology.github.io
 The csb website.
 
-
 # Local Development
 
 ## Setup
 
 1. `dotnet tool restore`
-2. Add olat password as `src/loaders/olat.p`, containing only the password as raw string.
+2. `npm install`
+3. Add olat password as `src/loaders/olat.p`, containing only the password as raw string.
 
 # Update css from scss
 
-1. `npm install` (only once per setup)
-2. `npm run updatecss`, will create minified css from `src/style/scss/main.scss`
+- `npm run update-css`, will create minified css from `src/style/scss/main.scss`.
 
 ## Run
 

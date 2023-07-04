@@ -9,7 +9,7 @@
     max-width: $grid-max-width;
 
     &.container--full {
-        max-width: none;
+        max-width: none !important;
         padding: 0;
     }
 

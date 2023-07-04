@@ -1,17 +1,25 @@
 @use 'sass:math';
-.content {
-    background: #efefef;
+
+body {
+    background-color: $color-default-bg; //rptu color
 }
 
-.tabs {
+main {
+    &.content {
+        background: #efefef;
+        margin-bottom: 0 !important
+    }
+}
+
+.csb-tabs {
     display: block;
     width: 100%;
 
-    .tab {
+    .csb-tab {
         display: none;
         width: 100%;
 
-        &.tab--active {
+        &.csb-tab--active {
             display: block;
         }
     }
@@ -75,6 +83,7 @@
     }
 
     h2 {
+        color: white !important;
         width: 100%;
         font-size: 1.2rem;
 
@@ -583,6 +592,7 @@
     .lecture-body {
         display: inline-block;
         margin: auto;
+        width: 100%;
         margin-bottom: 2rem;
         position: relative;
         padding: 0 1rem;

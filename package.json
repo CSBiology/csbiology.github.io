@@ -5,7 +5,7 @@
   "scripts": {
     "fornax": "cd ./src && dotnet fornax watch",
     "build": "cd ./src && dotnet fornax build",
-    "updatecss": "sass ./src/style/scss/main.scss:./src/style/css/main.css --style compressed"
+    "update-css": "sass ./src/style/scss/main.scss:./src/style/css/main.css --style compressed"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/CSBiology/csbiology.github.io#readme",
   "devDependencies": {
     "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
   }
 }
