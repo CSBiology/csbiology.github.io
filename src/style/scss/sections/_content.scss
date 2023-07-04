@@ -4,12 +4,11 @@ body {
     background-color: $color-default-bg; //rptu color
 }
 
-main {
-    &.content {
-        background: #efefef;
-        margin-bottom: 0 !important
-    }
+.csb-content {
+    background: #efefef;
+    margin-bottom: 0 !important
 }
+
 
 .csb-tabs {
     display: block;
@@ -26,8 +25,7 @@ main {
 }
 
 .section {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding: 2rem 0 1rem 0;
 
     @include min(40em) {
         padding-top: 10vh;
@@ -502,144 +500,10 @@ main {
 
 // TEACHING
 .teaching {
-    background: url(../img/teaching_bg.jpg) no-repeat bottom center;
+    background: url(../../img/teaching_bg.jpg) no-repeat bottom center;
     background-size: cover;
 }
 
-.lecture-container {
-    display: block;
-    width: 100%;
-}
-
-.lecture {
-
-    display: inline-block;
-    margin: auto;
-    margin-bottom: 2rem;
-    @include min(50em) {
-        max-width: 49%;
-    }
-    position: relative;
-    padding: 0 1rem;
-    vertical-align: top;
-
-    .lecture-heading {
-        .lecture__id,
-        .lecture__type,
-        .lecture__title,
-        .lecture__audience {
-            vertical-align: top;
-            display: inline-block;
-            padding: .4em .5em .35em;
-            background: #fff;
-            text-overflow: ellipsis;
-            font-size: 1rem;
-        }
-        .lecture__id {
-            display: inline-block;
-            background: $color-primary;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            line-height: 1;
-            margin-right: 0;
-            display: block;
-            max-width: calc(100% - 50px);
-            white-space: nowrap;
-            margin-bottom: 0;
-    
-            @include min(40em) {
-                font-size: 1.2rem;
-            }
-        }
-        .lecture__type {
-            display: inline-block;
-            font-size: 1rem;
-            line-height: 1;
-            color: #fff;
-            font-weight: bold;
-            background: lighten($color-primary, 15%);
-            position: absolute;
-            top: 0;
-            right: 1rem;
-            //border-left: 1rem solid lighten($color-primary, 10%);
-    
-            @include min(40em) {
-                font-size: 1.2rem;
-            }
-        }
-        .lecture__audience {
-            font-weight: bold;
-            width: 100%;
-        }
-        .lecture__audience::after {
-            content: "";
-            display: block;
-            border-bottom: 1px solid $color-primary;
-        }
-        .lecture__title {
-            width: 100%;
-            font-size: 1rem;
-            @include min(40em) {
-                font-size: 1.5rem;
-            }
-    
-            white-space: normal;
-            line-height: 1.6;
-            padding: 1em;
-        }
-    }
-    .lecture-body {
-        display: inline-block;
-        margin: auto;
-        width: 100%;
-        margin-bottom: 2rem;
-        position: relative;
-        padding: 0 1rem;
-        vertical-align: top;
-        background: #fff;
-
-        .lecture__cp,
-        .lecture__summary,
-        .lecture__link {
-            vertical-align: top;
-            display: inline-block;
-            padding: .4em .5em .35em;
-            background: #fff;
-            text-overflow: ellipsis;
-            font-size: 1rem;
-        }
-        .lecture__cp{
-            display: inline;
-            color: $color-primary;
-            font-weight: bold;
-            font-size: 1rem;
-            line-height: 1;
-            margin-right: 0;
-            display: block;
-            max-width: calc(100% - 50px);
-            white-space: nowrap;
-            margin-bottom: 0;
-    
-            @include min(40em) {
-                font-size: 1.2rem;
-            }
-        }
-        .lecture__links {
-            display: inline-block;
-            font-size: 1rem;
-            line-height: 1;
-            @include min(40em) {
-                font-size: 1.2rem;
-            }
-        }
-        .lecture__summary{
-            width: 100%;
-            text-align: justify;
-        }
-
-    }
-}
 
 // GITHUB
 .github {

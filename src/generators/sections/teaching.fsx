@@ -4,25 +4,49 @@
 #endif
 
 open Html
+open System.Text
+
+let createCP_Semester ((lex:Teachingloader.Teaching)) =
+    let sb = new StringBuilder()
+    if lex.CP <> "" then
+        sb.Append (lex.CP + " - ") |> ignore
+    sb.Append(lex.Semester) |> ignore
+    sb.ToString()
 
 let layoutLecture (lex:Teachingloader.Teaching) =
-    div [Class "lecture"] [
-        div [Class "lecture-heading"] [
-            div [Class "lecture__id"]   [!!lex.ExternalRef]
-            div [Class "lecture__type"] [!!lex.CourseType]
-            div [Class "lecture__audience"] [!!lex.Audience] 
-            div [Class "lecture__title"] [
-                b [] [!!lex.CourseType]
-                br []
-                !!lex.Title
-                ]
-        ]
-        div [Class "lecture-body"] [
-            div [Class "lecture__cp"]   [!!(sprintf "%s - %s" lex.CP lex.Semester)]
-            div [Class "lecture__link"] [
-                a [Href lex.SourceLink] [!!"OpenOlat"]
+    div [Class "column is-half"] [
+        div [Class "box has-background-white has-text-black p-0"] [
+            div [Class "is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2"] [ //header-container
+                div [Class "p-2 has-text-white"] [!!lex.ExternalRef] // Up-most row
+                div [Class "p-2 has-background-primary-light"; HtmlProperties.Style [CSSProperties.MarginLeft "auto"]] [!!lex.CourseType] // second row
             ]
-            div [Class "lecture__summary"] [!!lex.Summary]
+            div [Class "p-2"] [ // body
+                // div [Class "field"] [
+                //     div [Class "is-flex-grow-1"] [!!lex.Audience] //audience
+                // ]
+                div [Class "field"] [
+                    h1 [Class "title is-6"] [ 
+                        !!lex.CourseType
+                        span [Class "is-family-code has-text-weight-normal"] [!! " for "]
+                        if lex.Audience <> "" then
+                            !!lex.Audience 
+                        else
+                            !!"Mixed Audience"
+                    ]
+                    h2 [Class "subtitle"] [!!lex.Title]
+                ]
+                div [Class "field"] [
+                    div [Class "content"] [ // cont
+                        h6 [Class "has-text-primary"] [!!(createCP_Semester lex)]
+                        div [Class "is-family-code"; HtmlProperties.Style [CSSProperties.MarginTop "-1rem"]] [a [Href lex.SourceLink] [!!"OpenOlat"]]
+                    ]
+                ]
+                div [Class "field"] [
+                    div [Class "content"] [ // content
+                        p [] [!!lex.Summary]
+                    ]
+                ]
+            ] 
         ]
     ]
 
@@ -45,17 +69,17 @@ let generate (ctx : SiteContents) (_: string) =
             ]
             div [Class "csb-tabs"; Id "teaching-tabs"] [
                 div [Class "csb-tab csb-tab--active"; Id "tab_all_semesters"] [
-                    div [Class "lecture-container"] [
-                        yield! lexs |> List.map layoutLecture     
+                    div [Class "columns is-multiline"] [
+                        yield! lexs |> List.map layoutLecture
                     ]
                 ]
                 div [Class "csb-tab"; Id "tab_summer_semester"] [
-                    div [Class "lecture-container"] [
+                    div [Class "columns is-multiline"] [
                         yield! lexs |> List.filter (fun x -> x.Semester.ToLower().Contains "sommersemester") |> List.map layoutLecture     
                     ]
                 ]
                 div [Class "csb-tab"; Id "tab_winter_semester"] [
-                    div [Class "lecture-container"] [
+                    div [Class "columns is-multiline"] [
                         yield! lexs |> List.filter (fun x -> x.Semester.ToLower().Contains "wintersemester") |> List.map layoutLecture     
                     ]
                 ]

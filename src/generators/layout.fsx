@@ -99,7 +99,7 @@ let scaffold (ctx : SiteContents) bodyCnt =
         body [] [
             rptu_navbar()
             csb_navbar()
-            main [Class "content"] [
+            main [Class "csb-content"] [
                 // bodyCnt
                 yield! bodyCnt
             ]
