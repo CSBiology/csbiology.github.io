@@ -18,7 +18,7 @@ let rptu_navbar() =
                 ]
             ]
             h2 [Class "rptu-department"] [
-                a [Href "https://bio.rptu.de"] [!!"Department of Biology"]
+                a [Href "https://bio.rptu.de"; HtmlProperties.Style [CSSProperties.MarginLeft "-1px"]] [!!"Department of Biology"]
             ]
         ]
     ]
@@ -53,35 +53,6 @@ let csb_navbar() =
             ]
         ]
     ]
-
-// let header() =
-    // header [Class "header"] [
-
-        // div [Class "container"] [
-        //     //Title "CSB - Computational Systems Biology"
-        //     a [Class "logo"; Href "/";] [ span [] [!! "CSB - Computational Systems Biology"] ]
-            
-        //     nav [Class "nav"] [
-        //         ul [] [
-        //         li [] [ a [Href "#research"] [ 
-        //             i [Class "fa fa-flask"; HtmlProperties.Custom ("aria-hidden", "true") ] [];
-        //             !! "Research"]]
-        //         li [] [ a [Href "#team"] [ 
-        //             i [Class "fa fa-users"; HtmlProperties.Custom ("aria-hidden", "true") ] [];
-        //             !! "Team"]]
-        //         li [] [ a [Href "#publication"] [ 
-        //             i [Class "fa fa-book"; HtmlProperties.Custom ("aria-hidden", "true") ] [];
-        //             !! "Publications"]]
-        //         li [] [ a [Href "#teaching"] [ 
-        //             i [Class "fa fa-graduation-cap"; HtmlProperties.Custom ("aria-hidden", "true") ] [];
-        //             !! "Teaching"]]
-        //         li [] [ a [Href "#contact"] [ 
-        //             i [Class "fa fa-globe"; HtmlProperties.Custom ("aria-hidden", "true") ] [];
-        //             !! "Contact"] ]
-        //         ]
-        //     ]
-        // ] 
-    // ]
 
 let scaffold (ctx : SiteContents) bodyCnt =
     html [] [
