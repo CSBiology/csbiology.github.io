@@ -4,7 +4,8 @@
   "description": "The csb website",
   "scripts": {
     "fornax": "cd ./src && dotnet fornax watch",
-    "build": "cd ./src && dotnet fornax build"
+    "build": "cd ./src && dotnet fornax build",
+    "updatecss": "sass ./src/style/scss/main.scss:./src/style/css/main.css --style compressed"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CSBiology/csbiology.github.io/issues"
   },
-  "homepage": "https://github.com/CSBiology/csbiology.github.io#readme"
+  "homepage": "https://github.com/CSBiology/csbiology.github.io#readme",
+  "devDependencies": {
+    "sass": "^1.63.6"
+  }
 }

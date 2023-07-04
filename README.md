@@ -9,6 +9,10 @@ The csb website.
 1. `dotnet tool restore`
 2. Add olat password as `src/loaders/olat.p`, containing only the password as raw string.
 
+# Update css from scss
+
+1. Install `scss` globally.
+
 ## Run
 
 1. `npm run fornax`
