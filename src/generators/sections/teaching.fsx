@@ -43,11 +43,20 @@ let generate (ctx : SiteContents) (_: string) =
                 li [] [ a [Href "#tab_summer_semester"; Class "btn btn--small"] [!!"Summer semester"]]
                 li [] [ a [Href "#tab_winter_semester"; Class "btn btn--small"] [!!"Winter semester"]]
             ]
-            
-            div [Class "csb-tabs"; Id "teaching-csb-tabs"] [
+            div [Class "csb-tabs"; Id "teaching-tabs"] [
                 div [Class "csb-tab csb-tab--active"; Id "tab_all_semesters"] [
                     div [Class "lecture-container"] [
                         yield! lexs |> List.map layoutLecture     
+                    ]
+                ]
+                div [Class "csb-tab"; Id "tab_summer_semester"] [
+                    div [Class "lecture-container"] [
+                        yield! lexs |> List.filter (fun x -> x.Semester.ToLower().Contains "sommersemester") |> List.map layoutLecture     
+                    ]
+                ]
+                div [Class "csb-tab"; Id "tab_winter_semester"] [
+                    div [Class "lecture-container"] [
+                        yield! lexs |> List.filter (fun x -> x.Semester.ToLower().Contains "wintersemester") |> List.map layoutLecture     
                     ]
                 ]
             ]

@@ -83,30 +83,30 @@ let generate (ctx : SiteContents) (_: string) =
                 li [] [ a [Href "#tab_alumni"; Class "btn btn--small"] [!!"Alumni"]]
             ]
             
-            div [Class "team-tabs"; Id "team-tabs"] [
+            div [Class "csb-tabs"; Id "team-tabs"] [
                 // Scientific Staff
-                div [Class "team-tab team-tab--active"; Id "tab_staff"] [
+                div [Class "csb-tab csb-tab--active"; Id "tab_staff"] [
                     div [Class "persons"] [
                             for pm in persons -> 
                                 layoutPerson true pm
                     ]
                 ]
                 // Master Students
-                div [Class "team-tab"; Id "tab_master"] [
+                div [Class "csb-tab"; Id "tab_master"] [
                     div [Class "persons"] [
                             for pm in masters -> 
                                 layoutPerson false pm
                     ]
                 ]
                 // Bachelor Students
-                div [Class "team-tab"; Id "tab_bachelor"] [
+                div [Class "csb-tab"; Id "tab_bachelor"] [
                     div [Class "persons"] [
                             for pm in bachelor ->  
                                 layoutPerson false pm
                     ]
                 ]
                 // Alumni
-                div [Class "team-tab persons"; Id "tab_alumni"] [
+                div [Class "csb-tab persons"; Id "tab_alumni"] [
                     div [Class "alumni-container"] [
                         ul [Class "alumni"] [
                             for y,p in alumni ->

@@ -28,27 +28,27 @@ $(document).ready(function() {
         var clicked = $(this),
             target = clicked.attr('href');
         
-        $('#team-tabs').find('.tab--active').removeClass('tab--active');
+        $('#team-tabs').find('.csb-tab--active').removeClass('csb-tab--active');
         $('.js-tab-team-toggle').find('.btn--active').removeClass('btn--active');
 
 
         clicked.addClass('btn--active');
-        $(target).addClass('tab--active');
+        $(target).addClass('csb-tab--active');
     });
 
     // TEACHING TOGGLE
     $('.js-tab-teaching-toggle').on('click','.btn',function(e){
         e.preventDefault();
-
-        var clicked = $(this),
-            target = clicked.attr('href');
+        e.stopPropagation();
         
-        $('#teaching-tabs').find('.tab--active').removeClass('tab--active');
+        var clicked = $(this),
+        target = clicked.attr('href');
+
+        $('#teaching-tabs').find('.csb-tab--active').removeClass('csb-tab--active');
         $('.js-tab-teaching-toggle').find('.btn--active').removeClass('btn--active');
 
-
         clicked.addClass('btn--active');
-        $(target).addClass('tab--active');
+        $(target).addClass('csb-tab--active');
     });
 
     //$('.publication:gt(1)').hide();
