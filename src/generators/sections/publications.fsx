@@ -7,12 +7,6 @@ open Html
 
 let layoutPublication (pub:Bibloader.Publication) =
     let cLable = if pub.Featured then "publication--featured" else "publication"
-    div [Class cLable] [
-        div [Class "publication__publisher"] [!!pub.Publisher]
-        div [Class "publication__date"] [!!(sprintf "%i" pub.Year)]
-        div [Class "publication__title"] [!!pub.Title]
-        div [Class "publication__authors"] [!!pub.Authors]
-    ] |> ignore
     div [Class $"column is-one-third {cLable}"] [
         div [Class "box has-background-white has-text-black p-0"] [
             div [Class "is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2"] [ //header-container

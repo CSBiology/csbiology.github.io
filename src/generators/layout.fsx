@@ -27,7 +27,7 @@ let csb_navbar() =
     nav [Role "navigation"; Class "navbar is-light"; Id "csb-navbar"] [
         div [Class "navbar-brand"] [
             a [Class "navbar-item"] [
-                img [Src "./content/images/logo_small.png"]
+                img [Id "csb-logo"; Src "./content/images/logo_small_dark.png"]
             ]
             div [Class "navbar-burger"; Role "button"; HtmlProperties.Custom("data-target","navMenu")] [
                 span [HtmlProperties.Custom("aria-hidden", "true")] []  

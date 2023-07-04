@@ -137,13 +137,19 @@ document.addEventListener('DOMContentLoaded', () => {
 let scrollpos = window.scrollY
 const rptu = document.getElementById("rptu-navbar")
 const csb = document.getElementById("csb-navbar")
+const logo = document.getElementById("csb-logo")
 let scrollChange = rptu.offsetHeight
-const add_class_on_scroll = () => 
+const add_class_on_scroll = () => {
     csb.classList.add("is-link")
     csb.classList.remove("is-light")
-const remove_class_on_scroll = () => 
+    logo.src = "./content/images/logo_small.png";
+}
+
+const remove_class_on_scroll = () => {
+    logo.src = "./content/images/logo_small_dark.png";
     csb.classList.remove("is-link")
     csb.classList.add("is-light")
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     scrollpos = window.scrollY;
