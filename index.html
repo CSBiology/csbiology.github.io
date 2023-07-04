@@ -7,53 +7,64 @@
     <link rel="icon" type="image/png" href="./content/images/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="CSB (Computational Systems Biology) at RPTU Kaiserslautern, Germany"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossOrigin="anonymous" referrerpolicy="no-referrer"/>
     <script defer="true" src="https://kit.fontawesome.com/0d3e0ea7a6.js" crossOrigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style/css/main.css"/>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <a class="logo" href="/">
-          <span>
-            CSB - Computational Systems Biology
-          </span>
-        </a>
-        <nav class="nav">
-          <ul>
+    <nav role="navigation" class="rptu-navbar" id="rptu-navbar">
+      <div class="container is-flex is-flex-direction-column">
+        <div class="is-flex mb-3">
+          <a class="rptu-logo" href="">
+            <img src="./content/images/rptu_web_logo_schwarz.svg"/>
+          </a>
+          <ul class="rptu-container">
             <li>
-              <a href="#research">
-                <i class="fa fa-flask" aria-hidden="true"></i>
-                Research
-              </a>
-            </li>
-            <li>
-              <a href="#team">
-                <i class="fa fa-users" aria-hidden="true"></i>
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#publication">
-                <i class="fa fa-book" aria-hidden="true"></i>
-                Publications
-              </a>
-            </li>
-            <li>
-              <a href="#teaching">
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                Teaching
-              </a>
-            </li>
-            <li>
+              <span class="icon is-small has-text-link">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
               <a href="#contact">
-                <i class="fa fa-globe" aria-hidden="true"></i>
                 Contact
               </a>
             </li>
           </ul>
-        </nav>
+        </div>
+        <h2 class="rptu-department">
+          <a href="https://bio.rptu.de">
+            Department of Biology
+          </a>
+        </h2>
       </div>
-    </header>
+    </nav>
+    <nav role="navigation" class="navbar is-light" id="csb-navbar">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="./content/images/logo_small.png"/>
+        </a>
+        <div class="navbar-burger" role="button" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <a class="navbar-item" href="#research">
+          Research
+        </a>
+        <a class="navbar-item" href="#team">
+          Team
+        </a>
+        <a class="navbar-item" href="#publication">
+          Publications
+        </a>
+        <a class="navbar-item" href="#teaching">
+          Teaching
+        </a>
+        <a class="navbar-item" href="#contact">
+          Contact
+        </a>
+      </div>
+    </nav>
     <main class="content">
       <section class="section welcome">
         <div class="container">
@@ -121,8 +132,8 @@
               </a>
             </li>
           </ul>
-          <div class="tabs" id="team-tabs">
-            <div class="tab tab--active" id="tab_staff">
+          <div class="team-tabs" id="team-tabs">
+            <div class="team-tab team-tab--active" id="tab_staff">
               <div class="persons">
                 <div class="person">
                   <img src="content/images/team/mertel.png" alt="Janine Mertel (Team Assistant)" title="Janine Mertel (Team Assistant)" class="person__image"/>
@@ -199,7 +210,14 @@
                   <span class="person__role">
                     PhD Student
                   </span>
-                  <div class="person__socials"></div>
+                  <div class="person__socials">
+                    <a class="person__github" href="https://github.com/Freymaurer">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a class="person__orcid" href="https://orcid.org/0000-0002-8510-6810">
+                      <i class="fab fa-orcid"></i>
+                    </a>
+                  </div>
                 </div>
                 <div class="person">
                   <img src="content/images/team/ott.jpg" alt="Jonathan Ott (PhD Student)" title="Jonathan Ott (PhD Student)" class="person__image"/>
@@ -300,7 +318,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab" id="tab_master">
+            <div class="team-tab" id="tab_master">
               <div class="persons">
                 <div class="person">
                   <div class="person__avatar">
@@ -313,10 +331,10 @@
                 </div>
               </div>
             </div>
-            <div class="tab" id="tab_bachelor">
+            <div class="team-tab" id="tab_bachelor">
               <div class="persons"></div>
             </div>
-            <div class="tab persons" id="tab_alumni">
+            <div class="team-tab persons" id="tab_alumni">
               <div class="alumni-container">
                 <ul class="alumni">
                   <li>
@@ -1244,8 +1262,8 @@
               </a>
             </li>
           </ul>
-          <div class="tabs" id="teaching-tabs">
-            <div class="tab tab--active" id="tab_all_semesters">
+          <div class="csb-tabs" id="teaching-csb-tabs">
+            <div class="csb-tab csb-tab--active" id="tab_all_semesters">
               <div class="lecture-container">
                 <div class="lecture">
                   <div class="lecture-heading">
@@ -1463,22 +1481,22 @@
     <script src="style/js/main.js"></script>
     <script>
       
-                        WebFontConfig = {
-                            google: {
-                                families: ['Montserrat:400,700', 'Lora:400,400i,700']
-                            },
-                            custom: {
-                                families: ['FontAwesome'],
-                                urls: ['https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css']
-                            }
-                        };
+                            WebFontConfig = {
+                                google: {
+                                    families: ['Montserrat:400,700', 'Lora:400,400i,700']
+                                },
+                                custom: {
+                                    families: ['FontAwesome'],
+                                    urls: ['https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css']
+                                }
+                            };
 
-                        (function(d) {
-                            var wf = d.createElement('script'), s = d.scripts[0];
-                            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-                            s.parentNode.insertBefore(wf, s);
-                        })(document);
-                      
+                            (function(d) {
+                                var wf = d.createElement('script'), s = d.scripts[0];
+                                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+                                s.parentNode.insertBefore(wf, s);
+                            })(document);
+                        
     </script>
   </body>
 </html>

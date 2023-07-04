@@ -1,3 +1,4 @@
+@charset "utf-8";
 @use 'sass:math';
 /*$color-black: #232426;
 $color-grey: #ccc;
@@ -10,12 +11,18 @@ $color-orange: #ed7d31;
 $color-primary: $color-orange;
 $color-secondary: $color-blue;*/
 
+// Import the initial bulma variables
+@import "../../../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../../../node_modules/bulma/sass/utilities/functions";
+
 $color-black: #232426;
 $color-grey: #ccc;
 $color-lightgrey: #efefef;
+$color-default-bg: $color-lightgrey; //#e4e8eb;
 
 $color-lightblue: #d0d6dd;
 $color-blue: #507289;
+$color-darkblue: #042C58;
 $color-orange: #ed7c31;
 
 $color-primary: $color-orange;
@@ -31,3 +38,11 @@ $font-secondary: "Montserrat", Helvetica Neue, Helvetica, Arial, serif;
 $color-orcid: #A6CE39;
 $color-twitter: #1DA1F2;
 $color-github: #333;
+
+// Set Bulma the derived variables
+$link: $color-darkblue;
+$link-invert: $color-lightgrey;
+$light: $color-default-bg;
+
+// Import bulma
+@import "../../../../node_modules/bulma/bulma.sass";
