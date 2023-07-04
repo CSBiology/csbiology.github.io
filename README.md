@@ -11,7 +11,8 @@ The csb website.
 
 # Update css from scss
 
-1. Install `scss` globally.
+1. `npm install` (only once per setup)
+2. `npm run updatecss`, will create minified css from `src/style/scss/main.scss`
 
 ## Run
 
