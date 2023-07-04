@@ -6,12 +6,24 @@
 open Html
 
 let layoutPublication (pub:Bibloader.Publication) =
-    let cLable = if pub.Featured then "publication publication--featured" else "publication publication"
+    let cLable = if pub.Featured then "publication--featured" else "publication"
     div [Class cLable] [
         div [Class "publication__publisher"] [!!pub.Publisher]
         div [Class "publication__date"] [!!(sprintf "%i" pub.Year)]
         div [Class "publication__title"] [!!pub.Title]
         div [Class "publication__authors"] [!!pub.Authors]
+    ] |> ignore
+    div [Class $"column is-one-third {cLable}"] [
+        div [Class "box has-background-white has-text-black p-0"] [
+            div [Class "is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2"] [ //header-container
+                b [Class "p-2 has-text-white"] [!!pub.Publisher] // Up-most row
+                div [Class "p-2 has-background-primary-light"; HtmlProperties.Style [CSSProperties.MarginLeft "auto"]] [!!(sprintf "%i" pub.Year)] // second row
+            ]
+            div [Class "content p-2 mb-1 is-size-5"] [ // body 
+                !!pub.Title
+            ]
+            div [Class "publication__authors content p-2 is-size-7 is-family-code"] [!!pub.Authors]
+        ]
     ]
     
 
@@ -28,7 +40,7 @@ let generate (ctx : SiteContents) (_: string) =
             h2 [Class "section__title"] [ !! "Publications" ]
             p  [Class "section__subtitle"] [ !! "View our selected publications"]
             
-            div [Class "publication-container"] [
+            div [Class "columns is-multiline publication-container"] [
                 yield! pubs |> List.map layoutPublication
             ]
             

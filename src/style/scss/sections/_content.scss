@@ -203,140 +203,17 @@ body {
     }
 
 .publication-container {
-    display: block;
-    width: 100%;
-    font-size: 0;
+
+    .publication {
+        display: none;
+    }
 
     &.active {
         .publication {
             display: block;
         }
     }
-
-    .more-block {
-        text-align: center;
-        font-size: 1rem;
-    }
 }
-
-.publication {
-    position: relative;
-    display: none;
-    font-size: 0;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-    vertical-align: top;
-
-    .publication__publisher,
-    .publication__date,
-    .publication__title,
-    .publication__authors {
-        vertical-align: top;
-        display: inline-block;
-        padding: .4em .5em .35em;
-        background: #fff;
-        text-overflow: ellipsis;
-        margin-bottom: .3em;
-        font-size: 1rem;
-    }
-
-    .publication__publisher {
-        display: inline-block;
-        background: $color-primary;
-        color: white;
-        font-weight: bold;
-        font-size: 1rem;
-        line-height: 1;
-        margin-right: 0;
-        white-space: nowrap;
-        overflow: hidden;
-
-        @include min(40em) {
-            font-size: 1.2rem;
-        }
-    }
-    .publication__date {
-        display: inline-block;
-        font-size: 1rem;
-        line-height: 1;
-        color: #fff;
-        font-weight: bold;
-        background: lighten($color-primary, 15%);
-        
-        //border-left: 1rem solid lighten($color-primary, 10%);
-
-        @include min(40em) {
-            font-size: 1.2rem;
-        }
-    }
-    .publication__title {
-        cursor: pointer;
-        width: 100%;
-        overflow: hidden;
-        
-        white-space: nowrap;
-        font-size: 1rem;
-
-        @include min(40em) {
-            font-size: 1.5rem;
-        }
-
-        &.clicked {
-            white-space: normal;
-        }
-    }
-    .publication__authors {
-        opacity: .6;
-        font-size: .75rem;
-        white-space: inherit;
-        line-height: 1.8;
-
-        @include min(40em) {
-            font-size: 1rem;
-        }
-    }
-
-    &.publication--featured {
-        display: inline-block;
-        margin: auto;
-        margin-bottom: 2rem;
-
-        @include min(50em) {
-            max-width: 33.33%;
-        }
-
-        .publication__authors {
-            display: none;
-        }
-
-        .publication__date {
-            position: absolute;
-            top: 0;
-            right: 1rem;
-        }
-    
-        .publication__publisher {
-            display: block;
-            max-width: calc(100% - 50px);
-            white-space: nowrap;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
-
-        .publication__title {
-            white-space: normal;
-            line-height: 1.6;
-            font-size: 1rem;
-            padding: 1em;
-
-            @include min(40em) {
-                font-size: 1.2rem;
-            }
-        }
-    }
-}
-
-
 
 // STATISTICS
 .stats {
