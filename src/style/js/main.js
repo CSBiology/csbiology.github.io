@@ -140,7 +140,7 @@ const csb = document.getElementById("csb-navbar")
 const logo = document.getElementById("csb-logo")
 let scrollChange = rptu.offsetHeight
 const add_class_on_scroll = () => {
-    csb.classList.add("is-link")
+    csb.classList.add("is-link", "has-text-white")
     csb.classList.remove("is-light")
     logo.src = "./content/images/logo_small.png";
 }
@@ -148,6 +148,7 @@ const add_class_on_scroll = () => {
 const remove_class_on_scroll = () => {
     logo.src = "./content/images/logo_small_dark.png";
     csb.classList.remove("is-link")
+    csb.classList.remove("has-text-white")
     csb.classList.add("is-light")
 }
 

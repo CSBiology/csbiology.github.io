@@ -69,14 +69,14 @@
         }
     }
 
-    &.is-link {
+    &.has-text-white {
         .navbar-menu {
             @media (min-width: 1025px) {
                 .navbar-item {
-                    color: $color-lightgrey !important
+                    color: white !important
                 }
                 .navbar-item:hover {
-                    background-color: darken($color: $color-darkblue, $amount: 5)
+                    background-color: #476579
                 }
             }
         }
