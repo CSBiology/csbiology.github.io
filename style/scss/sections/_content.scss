@@ -209,6 +209,10 @@ body {
     }
 
     &.active {
+
+        max-height: 80vh;
+        overflow-y: scroll;
+
         .publication {
             display: block;
         }
