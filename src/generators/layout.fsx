@@ -66,6 +66,8 @@ let scaffold (ctx : SiteContents) bodyCnt =
             link [Rel "stylesheet"; Href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"; Integrity "sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="; CrossOrigin "anonymous"; HtmlProperties.Custom("referrerpolicy", "no-referrer")]
             script [Defer true; Src "https://kit.fontawesome.com/0d3e0ea7a6.js"; CrossOrigin "anonymous"] []
             link [Rel "stylesheet"; Type "text/css"; Href "style/css/main.css"]
+            link [Rel "preload"; HtmlProperties.Custom("as","image"); Href "./content/images/logo_small_dark.png"]
+            link [Rel "preload"; HtmlProperties.Custom("as","image"); Href "./content/images/logo_small.png"]
         ]
         body [] [
             rptu_navbar()

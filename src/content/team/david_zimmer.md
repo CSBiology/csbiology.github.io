@@ -1,6 +1,6 @@
 ---
 index: 2
-name: David Zimme
+name: David Zimmer
 img: zimmer.jpg
 role: PostDoc
 orcid: 0000-0002-7832-7658
