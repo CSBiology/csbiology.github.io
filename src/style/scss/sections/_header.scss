@@ -69,13 +69,21 @@
         }
     }
 
+    .navbar-menu {
+        @media (min-width: 1025px) {
+            .navbar-item:hover, .navbar-item:focus {
+                background-color: #e2e2e2
+            }
+        }
+    }
+
     &.has-text-white {
         .navbar-menu {
             @media (min-width: 1025px) {
                 .navbar-item {
                     color: white !important
                 }
-                .navbar-item:hover {
+                .navbar-item:hover, .navbar-item:focus {
                     background-color: #476579
                 }
             }
