@@ -14,16 +14,14 @@ let createCP_Semester ((lex:Teachingloader.Teaching)) =
     sb.ToString()
 
 let layoutLecture (lex:Teachingloader.Teaching) =
+    let courseType = if lex.CourseType.ToLower() = "course" then "Practical Course" else lex.CourseType
     div [Class "column is-half"] [
         div [Class "box has-background-white has-text-black p-0"] [
             div [Class "is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2"] [ //header-container
                 div [Class "p-2 has-text-white"] [!!lex.ExternalRef] // Up-most row
-                div [Class "p-2 has-background-primary-light"; HtmlProperties.Style [CSSProperties.MarginLeft "auto"]] [!!lex.CourseType] // second row
+                div [Class "p-2 has-background-primary-light"; HtmlProperties.Style [CSSProperties.MarginLeft "auto"]] [!!courseType] // second row
             ]
             div [Class "p-2"] [ // body
-                // div [Class "field"] [
-                //     div [Class "is-flex-grow-1"] [!!lex.Audience] //audience
-                // ]
                 div [Class "field"] [
                     h1 [Class "title is-6"] [ 
                         !!lex.CourseType
