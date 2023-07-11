@@ -24,7 +24,7 @@ let layoutLecture (lex:Teachingloader.Teaching) =
             div [Class "p-2"] [ // body
                 div [Class "field"] [
                     h1 [Class "title is-6"] [ 
-                        !!lex.CourseType
+                        !!courseType
                         span [Class "is-family-code has-text-weight-normal"] [!! " for "]
                         if lex.Audience <> "" then
                             !!lex.Audience 
