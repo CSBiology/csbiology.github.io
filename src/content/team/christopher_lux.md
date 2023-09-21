@@ -1,8 +1,8 @@
 ---
 name: Christopher Lux
-img: lux.jpg
+img: lux.png
 role: PhD Student
-twitter: ottjona
-github: Joott
+twitter: LibraChris_
+github: LibraChris
 alumni: 2022-Master Student
 ---

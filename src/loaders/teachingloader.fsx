@@ -123,7 +123,7 @@ let password =
         let tokenName = "OLAT_TOKEN"
         let containsKey = envVars.ContainsKey tokenName
         if not containsKey then
-            printfn "Uanble to find Olat token as environmental variable!"
+            printfn "Unable to find Olat token as environmental variable!"
         envVars.[tokenName].Trim()
 
 let getMetadataBy (repoEntryKey:string) = 
