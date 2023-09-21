@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;  
+    padding: 0 .8rem;
+    width: 100%;
+    max-width: $grid-max-width;
+
+    &.container--full {
+        max-width: none !important;
+        padding: 0;
+    }
+
+    // Breakpoint change the wrap
+}
