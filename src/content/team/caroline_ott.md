@@ -1,8 +1,7 @@
 ---
-name: Jonathan Ott
-img: ott.jpg
+name: Caroline Ott
 role: PhD Student
-twitter: ottjona
+twitter: ott_caro
 github: Joott
 alumni: 2020-Master Student
 ---
