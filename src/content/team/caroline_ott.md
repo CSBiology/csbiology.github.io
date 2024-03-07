@@ -2,7 +2,8 @@
 name: Caroline Ott
 img: ott.jpg
 role: PhD Student
-twitter: ott_caro
-github: Joott
+orcid: 0000-0003-1512-9504
+twitter: ott__caro
+github: caroott
 alumni: 2020-Master Student
 ---
