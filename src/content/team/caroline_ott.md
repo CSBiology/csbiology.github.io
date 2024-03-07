@@ -1,5 +1,6 @@
 ---
 name: Caroline Ott
+img: ott.jpg
 role: PhD Student
 twitter: ott_caro
 github: Joott
