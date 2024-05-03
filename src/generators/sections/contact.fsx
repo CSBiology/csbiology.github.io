@@ -31,7 +31,7 @@ let generate (ctx : SiteContents) (_: string) =
                 !!"""Prof. Dr. Timo Mühlhaus<br>
                      Computational Systems Biology<br><br>
                      RPTU University of Kaiserslautern<br>
-                     Paul-Ehrlich-Str. 23 R109<br>
+                     Erwin-Schrödinger-Str. 56 R244<br>
                      67663 Kaiserslautern, Germany<br><br>
                 """
                 i [Class "fa fa-phone"] []; !!"+ 49 631 205 4657"
