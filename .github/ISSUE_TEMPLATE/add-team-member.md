@@ -23,7 +23,7 @@ assignees: Freymaurer
 
 ### **Role**:
 
-> Any of `phd`, `master`, ``bachelor`, `alumni`-->
+<!--Any of `phd`, `master`, ``bachelor`, `alumni`-->
 
 
 ### **GitHub**:
