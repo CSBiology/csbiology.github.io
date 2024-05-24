@@ -1,5 +1,7 @@
 # csbiology.github.io
-The csb website.
+
+The official [CSB-Website](https://csbiology.github.io).
+
 
 # Local Development
 
