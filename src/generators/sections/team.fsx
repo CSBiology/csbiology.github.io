@@ -6,8 +6,8 @@
 open Html
 
 let createSocial (sc:Teamloader.Social) =
-    let pro = sprintf "person__%s" (sc.String())
-    let fab = sprintf "fab fa-%s" (sc.String())
+    let pro = sc.CSSClass
+    let fab = sc.Icon
     a [Class pro; Href (sc.toHrefStr())] [ i [Class fab] [] ]
 
 let getInitials (name:string) =
@@ -27,7 +27,8 @@ let layoutPerson (incRole:bool) (tm:Teamloader.TeamMember) =
         | None ->
             div [Class "person__avatar"] [!! initials]    
         h3 [Class "person__name"] [ !! tm.Name ]
-        if incRole then span [Class "person__role"] [ !! roleStr ]        
+        if incRole then span [Class "person__role"] [ !! roleStr ]
+        if tm.Phone.IsSome then span [Class "person__role"] [ !! tm.Phone.Value ]      
         div [Class "person__socials"] [
             yield! tm.Socials |> List.map createSocial
         ]

@@ -32,21 +32,32 @@ type Social =
     | GitHub of string
     | Orcid of string
     | Twitter of string
+    | Email of string
     member this.toHrefStr() =
         match this with
         | GitHub  handle -> "https://github.com/" + handle
         | Orcid   handle -> "https://orcid.org/" + handle
         | Twitter handle -> "https://twitter.com/" + handle
-    member this.String() =
+        | Email   handle -> "mailto:" + handle
+    member this.Icon =
         match this with
-        | GitHub  _ -> "github"
-        | Orcid   _ -> "orcid"
-        | Twitter _ -> "twitter"
+        | GitHub  _ -> "fab fa-github"
+        | Orcid   _ -> "fab fa-orcid"
+        | Twitter _ -> "fab fa-twitter"
+        | Email   _ -> "fa-solid fa-envelope"
+
+    member this.CSSClass =
+        match this with
+        | GitHub  _ -> "person__github"
+        | Orcid   _ -> "person__orcid"
+        | Twitter _ -> "person__twitter"
+        | Email   _ -> "person__email"
 
 type TeamMember = {
     Index         : int
     Name          : string
     Img           : string option
+    Phone         : string option
     Role          : Role
     Socials       : Social list
     //AlumniDetails : AlumniDetails list
@@ -115,11 +126,13 @@ let loadFile (rootDir: string) (n: string) =
     let name = teamData |> Map.find "name" |> trimString
     let img  = teamData |> Map.tryFind "img" |> Option.map trimString |> Option.map (fun s -> imgDir + s)
     let role = teamData |> Map.find "role" |> trimString 
+    let phone = teamData |> Map.tryFind "phone" |> Option.map trimString
     let socials: Social list = 
         [
             teamData |> Map.tryFind "github"  |> Option.map (trimString >> Social.GitHub)
             teamData |> Map.tryFind "orcid"   |> Option.map (trimString >> Social.Orcid)
             teamData |> Map.tryFind "twitter" |> Option.map (trimString >> Social.Twitter)
+            teamData |> Map.tryFind "email"   |> Option.map (trimString >> Social.Email)
         ] |> List.choose id
     
     let alumniDetails =
@@ -136,6 +149,7 @@ let loadFile (rootDir: string) (n: string) =
       Index   =  index
       Name    = name
       Img     = img
+      Phone   = phone
       Role    = Role.parse role
       Socials = socials
     }, alumniDetails
