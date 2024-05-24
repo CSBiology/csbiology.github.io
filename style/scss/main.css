@@ -780,6 +780,12 @@ p {
   color: #333;
 }
 
+.person__email {
+  color: red;
+}
+
+
+
 .teaching {
   background: url(../img/teaching_bg.jpg) no-repeat bottom center;
   background-size: cover;
