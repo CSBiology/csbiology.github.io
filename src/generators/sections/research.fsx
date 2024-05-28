@@ -3,95 +3,83 @@
 open Html
 
 type FrameSlide = {
-    Title: string
-    Subtitle: string
-    Text: string
-    BackgroundColor: string
+    Content: string
+    Image: string
 }
 
-let ExampleBase = {
-  Title = "Welcome to CSB"
-  Subtitle = "What our research is aiming for"
-  Text = "The main focus of our group is the application and development of computational methods to process and integrate quantitative biological data from modern high-throughput measurements in order to gain novel insights into biological responses to environment changes. The main challenge is the rigorous integration of different system level analyses and present knowledge into biological interpretable models. Therefore, we want to drive theory and technology forward with a combination of biological science, applied informatics, statistical and machine learning approaches."
-  BackgroundColor = "#ed7d31"
+let Example1 = {
+  Content = """<ul>
+  <li>Main content categories, which describe common rules shared by many elements.</li>
+  <li>Form-related content categories, which describe rules common to form-related elements.</li>
+  <li>Specific content categories, which describe rare categories shared only by a few elements, sometimes only in a specific context.</li>
+</ul>"""
+  Image = "https://picsum.photos/200/300"
 }
 
-let Example2 = {ExampleBase with Title = "Example 2"; BackgroundColor = "#5b9bd5"}
-let Example3 = {ExampleBase with Title = "Example 3"; BackgroundColor = "#5b9bd5"}
-let Example4 = {ExampleBase with Title = "Example 4"; BackgroundColor = "#5b9bd5"}
+let Example2 = {
+  Content = """<p>Flow content is a broad category that encompasses most elements that can go inside the <a href="/en-US/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a> element, including heading elements, sectioning elements, phrasing elements, embedding elements, interactive elements, and form-related elements. It also includes text nodes (but not those that only consist of white space characters).</p>"""
+  Image = "https://picsum.photos/200/300"
+}
+let Example3 = {
+  Content = """<section aria-labelledby="sectioning_content"><h3 id="sectioning_content"><a href="#sectioning_content">Sectioning content</a></h3><div class="section-content"><p>Sectioning content, a subset of flow content, creates a <a href="/en-US/docs/Web/HTML/Element/Heading_Elements">section in the current outline</a> defining the scope of <a href="/en-US/docs/Web/HTML/Element/header"><code>&lt;header&gt;</code></a> and <a href="/en-US/docs/Web/HTML/Element/footer"><code>&lt;footer&gt;</code></a> elements.</p>
+<p>Elements belonging to this category are <a href="/en-US/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>, <a href="/en-US/docs/Web/HTML/Element/aside"><code>&lt;aside&gt;</code></a>, <a href="/en-US/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>, and <a href="/en-US/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a>.</p></div></section>"""
+  Image = "https://picsum.photos/200/300"
+}
+let Example4 = {
+  Content = """<ul>
+  <li><a href="/en-US/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/a#href"><code>href</code></a> attribute is present</li>
+  <li><a href="/en-US/docs/Web/HTML/Element/audio"><code>&lt;audio&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/audio#controls"><code>controls</code></a> attribute is present</li>
+  <li><a href="/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/img#usemap"><code>usemap</code></a> attribute is present</li>
+  <li><a href="/en-US/docs/Web/HTML/Element/input"><code>&lt;input&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/input#type">type</a> attribute is not in the hidden state</li>
+  <li><a href="/en-US/docs/Web/HTML/Element/object"><code>&lt;object&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/object#usemap"><code>usemap</code></a> attribute is present</li>
+  <li><a href="/en-US/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a>, if the <a href="/en-US/docs/Web/HTML/Element/video#controls"><code>controls</code></a> attribute is present</li>
+</ul>"""
+  Image = "https://picsum.photos/200/300"
+}
 
-// ------------ ⚠️ -----------
-// Must set the number of slides in scss: `style/scss/sections/_slider.scss` on top variable `$count-slides: 4;`
-// ------------ ⚠️ -----------
-let private createFrameSlide (slide: FrameSlide) (index: int) =
-  let classFromindex index = sprintf "frame frame_%i" (index+1)
-  div [Class (classFromindex index)] [
-      div [Class "frame-content"] [
-          div [Class "container container--full"] [
-              div [Class "research__title"; HtmlProperties.Style [CSSProperties.BackgroundColor slide.BackgroundColor]] [
+
+let private createFrameSlide (slide: FrameSlide) =
+  let innerFlexBoxContainer = HtmlProperties.Style [Display "flex"; CSSProperties.Height "100%"; AlignItems "center"]
+  li [Class "splide__slide"] [
+      // container
+      div [Class "is-flex fixed-grid research__bg"; HtmlProperties.Style [CSSProperties.Height "100%"; AlignItems "center"; JustifyContent "center"]] [
+          div [Class "grid research__grid"; HtmlProperties.Style [CSSProperties.Custom("justify-items", "end"); CSSProperties.Height "fit-content";]] [
+              div [Class "cell research__cell"] [
+                div [innerFlexBoxContainer] [
                   div [] [
-                      h2 [] [ !! slide.Title ];
-                      p [] [ !! slide.Subtitle ];
+                    img [Src slide.Image]
                   ]
-              ];
-          
-              div [Class "research__text"] [
-                  p [] [!! slide.Text]
+                ]
               ]
-          ] 
+              div [Class "cell research__cell"] [
+                div [innerFlexBoxContainer] [
+                  div [Class "content research__content"] [!!slide.Content]
+                ]
+              ]
+          ]
       ]
   ]
-
-let private createRadioButton(index: int, createId: int -> string) =
-    input [
-        Type "radio"
-        Id (createId index)
-        Name "frame"
-    ]
-
-let private createFrame(slides: FrameSlide []) = 
-    let idFromIndex index = sprintf "frame%i" (index+1)
-    div [Id "frame"] [
-        for i in 0..slides.Length-1 do
-            createRadioButton(i, idFromIndex)
-        div [Id "slides"] [
-            div [Id "overflow"] [
-                div [Class "inner"] [
-                    for i in 0..slides.Length-1 do
-                        createFrameSlide slides.[i] i
-                ]
-            ]
-        ]
-        div [Id "controls"] [
-            for i in 0..slides.Length-1 do
-                label [HtmlProperties.Custom("for", idFromIndex i)] []
-        ]
-        div [Id "bullets"] [
-            for i in 0..slides.Length-1 do
-                label [HtmlProperties.Custom("for", idFromIndex i)] []
-        ]
-    ]
-
 
 let generate (ctx : SiteContents) (_: string) =
     // section [Class "section research"; Id "research"] [
     //     // createFrame [|ExampleBase; Example2; Example3; Example4|]
         
     // ]
-    div [HtmlProperties.Style [CSSProperties.Height "600px"]] [
+    let slides = [Example1; Example2; Example3; Example4]
+    div [HtmlProperties.Style [CSSProperties.Height "400px"]] [
         section [Class "splide"; HtmlProperties.Custom("aria-label","current research information")] [
             // div [Class "splide__slider"] [
             // ]
             div [Class "splide__track"] [
                 ul [Class "splide__list"] [
-                    li [Class "splide__slide"] [!!"Slide 01"]
-                    li [Class "splide__slide"] [!!"Slide 02"]
-                    li [Class "splide__slide"] [!!"Slide 03"]
+                    for slide in slides do
+                      createFrameSlide slide
                 ]
             ]
             div [Class "splide__progress"] [
                 div [Class "splide__progress__bar"] []
             ]
+            // https://github.com/Splidejs/splide/issues/1310
             button [Class "splide__toggle"; Type "button"] [
                 svg [Class "splide__toggle__play"; HtmlProperties.Custom("viewBox","0 0 24 24"); HtmlProperties.Custom("xmlns", "http://www.w3.org/2000/svg")] [
                     path  [HtmlProperties.Custom("d", "m22 12-20 11v-22l10 5.5z")] []

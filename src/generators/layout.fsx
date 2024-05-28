@@ -67,6 +67,7 @@ let scaffold (ctx : SiteContents) bodyCnt =
             // https://splidejs.com/guides/getting-started/ for research carousel
             script [Src "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"] []
             link [Rel "stylesheet"; Href "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"]
+            link [Rel "stylesheet"; Href "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"]
             script [Defer true; Src "https://kit.fontawesome.com/0d3e0ea7a6.js"; CrossOrigin "anonymous"] []
             link [Rel "stylesheet"; Type "text/css"; Href "style/css/main.css"]
             link [Rel "preload"; HtmlProperties.Custom("as","image"); Href "./content/images/logo_small_dark.png"]
