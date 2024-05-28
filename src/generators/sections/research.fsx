@@ -74,6 +74,37 @@ let private createFrame(slides: FrameSlide []) =
 
 
 let generate (ctx : SiteContents) (_: string) =
-    section [Class "section research"; Id "research"] [
-        createFrame [|ExampleBase; Example2; Example3; Example4|]
+    // section [Class "section research"; Id "research"] [
+    //     // createFrame [|ExampleBase; Example2; Example3; Example4|]
+        
+    // ]
+    div [HtmlProperties.Style [CSSProperties.Height "600px"]] [
+        section [Class "splide"; HtmlProperties.Custom("aria-label","current research information")] [
+            // div [Class "splide__slider"] [
+            // ]
+            div [Class "splide__track"] [
+                ul [Class "splide__list"] [
+                    li [Class "splide__slide"] [!!"Slide 01"]
+                    li [Class "splide__slide"] [!!"Slide 02"]
+                    li [Class "splide__slide"] [!!"Slide 03"]
+                ]
+            ]
+            div [Class "splide__progress"] [
+                div [Class "splide__progress__bar"] []
+            ]
+            button [Class "splide__toggle"; Type "button"] [
+                svg [Class "splide__toggle__play"; HtmlProperties.Custom("viewBox","0 0 24 24"); HtmlProperties.Custom("xmlns", "http://www.w3.org/2000/svg")] [
+                    path  [HtmlProperties.Custom("d", "m22 12-20 11v-22l10 5.5z")] []
+                ]
+                svg [Class "splide__toggle__pause"; HtmlProperties.Custom("viewBox","0 0 24 24"); HtmlProperties.Custom("xmlns", "http://www.w3.org/2000/svg")] [
+                    path  [HtmlProperties.Custom("d", "m2 1v22h7v-22zm13 0v22h7v-22z")] []
+                ]
+            ]
+        ]
+        script [] [
+            !!"""document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', { type: 'loop', autoplay: true } );
+    splide.mount();
+} );"""
+        ]
     ]

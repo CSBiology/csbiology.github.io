@@ -9,6 +9,10 @@ body {
     margin-bottom: 0 !important
 }
 
+.splide__progress__bar {
+    height: 3px;
+    background: #ccc;
+}
 
 .csb-tabs {
     display: block;
@@ -198,7 +202,7 @@ body {
     }
 
     .research__text {
-        max-width: math.div($grid-max-width, 2);
+        // max-width: math.div($grid-max-width, 2);
         margin-left: 0;
     }
 
