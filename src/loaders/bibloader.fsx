@@ -80,7 +80,6 @@ let loadFile (featured:bool) (bibFile: string) =
 
 let loader (projectRoot: string) (siteContent: SiteContents) =
     let postsPath = Path.Combine(projectRoot, contentDir)
-    printfn "%s" postsPath
     let options = EnumerationOptions(RecurseSubdirectories = false)
     let files = Directory.GetFiles(postsPath, "*", options)
     files
