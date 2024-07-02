@@ -9,6 +9,10 @@ body {
     margin-bottom: 0 !important
 }
 
+.splide__progress__bar {
+    height: 3px;
+    background: #ccc;
+}
 
 .csb-tabs {
     display: block;
@@ -158,49 +162,7 @@ body {
 .research {
     padding: 0;
     background: linear-gradient(to top, rgba($color-lightblue, .5), rgba(255, 255, 255, 0));
-
-    .container {
-        align-content: stretch;
-    }
 }
-
-    .research__title,
-    .research__text {
-        width: 100%;
-        padding: 2rem;
-        padding-bottom: 1rem;
-        margin: auto;
-
-        @include min(40em) {
-            width: 50%;
-            padding: 10vh 2rem;
-        }
-    }
-
-    .research__title {
-        display:flex;
-        align-items:center;
-        align-self:stretch;
-        flex-wrap: wrap;
-        text-align: center;
-        background: url(../img/research_bg.jpg) no-repeat center center;
-        background-size: cover;
-        color: #fff;
-        margin: 0;
-
-        @include min(40em) {
-            text-align: right;
-        }
-
-        > div {
-            width: 100%;
-        }
-    }
-
-    .research__text {
-        max-width: math.div($grid-max-width, 2);
-        margin-left: 0;
-    }
 
 .publication-container {
 

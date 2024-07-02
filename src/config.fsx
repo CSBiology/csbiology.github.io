@@ -18,6 +18,8 @@ let staticPredicate (projectRoot: string, page: string) =
     let fileShouldBeExcluded =
         ext = ".fsx" ||
         ext = ".md"  ||
+        ext = ".p" ||
+        ext = ".bib" ||
         page.Contains "_public" ||
         page.Contains "_bin" ||
         page.Contains "_lib" ||

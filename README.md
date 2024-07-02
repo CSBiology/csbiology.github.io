@@ -1,5 +1,7 @@
 # csbiology.github.io
-The csb website.
+
+The official [CSB-Website](https://csbiology.github.io).
+
 
 # Local Development
 
@@ -38,4 +40,23 @@ alumni: 2020-Master Student
 phone: +49 000 111 4242 # this is only an example 
 email: freyk@rptu.de
 ---
+```
+
+### Research
+
+Create a `.md` file in `src/content/research`. All fields without an `#!` are optional.
+
+Images must be places in `src/content/images/research`.
+
+Without `index` slides are sorted to the end.
+
+```yaml
+---
+index: <int>
+img: <image_name_in_folder>
+img_url: <url_to_image>
+---
+# My cool research
+
+Any content in **markdown**!
 ```

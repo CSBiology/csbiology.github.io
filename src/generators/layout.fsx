@@ -1,6 +1,5 @@
 #r "../_lib/Fornax.Core.dll"
 
-
 open Html
 
 let rptu_navbar() =
@@ -64,6 +63,10 @@ let scaffold (ctx : SiteContents) bodyCnt =
             meta [Name "description"; Content "CSB (Computational Systems Biology) at RPTU Kaiserslautern, Germany"]
             // link [Rel "stylesheet"; Type "text/css"; Href "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"]
             link [Rel "stylesheet"; Href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"; Integrity "sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="; CrossOrigin "anonymous"; HtmlProperties.Custom("referrerpolicy", "no-referrer")]
+            // https://splidejs.com/guides/getting-started/ for research carousel
+            script [Src "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"] []
+            link [Rel "stylesheet"; Href "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"]
+            link [Rel "stylesheet"; Href "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"]
             script [Defer true; Src "https://kit.fontawesome.com/0d3e0ea7a6.js"; CrossOrigin "anonymous"] []
             link [Rel "stylesheet"; Type "text/css"; Href "style/css/main.css"]
             link [Rel "preload"; HtmlProperties.Custom("as","image"); Href "./content/images/logo_small_dark.png"]
@@ -73,7 +76,6 @@ let scaffold (ctx : SiteContents) bodyCnt =
             rptu_navbar()
             csb_navbar()
             main [Class "csb-content"] [
-                // bodyCnt
                 yield! bodyCnt
             ]
             
@@ -106,6 +108,7 @@ let scaffold (ctx : SiteContents) bodyCnt =
                             })(document);
                         """
             ]
+
         ]  
     ]
         
