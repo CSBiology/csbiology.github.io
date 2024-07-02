@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="CSB (Computational Systems Biology) at RPTU Kaiserslautern, Germany"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossOrigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"/>
     <script defer="true" src="https://kit.fontawesome.com/0d3e0ea7a6.js" crossOrigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style/css/main.css"/>
     <link rel="preload" as="image" href="./content/images/logo_small_dark.png"/>
@@ -85,25 +88,153 @@
           <img src="./style/video/snapshots/Working-Space.jpg" alt=""/>
         </video>
       </section>
-      <section class="section research" id="research">
-        <div class="container container--full">
-          <div class="research__title">
-            <div>
-              <h2>
-                Welcome to CSB
-              </h2>
-              <p>
-                What our research is aiming for
-              </p>
+      <div style="height: fit-content;">
+        <section class="splide" aria-label="current research information">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="is-flex fixed-grid research__bg has-1-cols-mobile" style="height: 100%; align-items: center; justify-content: center;">
+                  <div class="grid research__grid" style="justify-items: end; height: fit-content; max-height: fit-content;">
+                    <div class="cell research__cell" style="width: 100%; max-width: unset;">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div>
+                          <img src="content/images/research/rdm.png" style="max-width: 100%;"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell research__cell">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div class="content research__content">
+                          <h1 id="research-data-management-rdm">Research data management (RDM)</h1>
+<p>We are committed to the success of FAIR (Findable, Accessible, Interoperable, and Reusable) and open research data. Research data possess immense value, which, when combined with tomorrow's technologies such as machine and deep learning, can unlock answers to questions we cannot even conceive today. Therefore, the flexible contextualization of research data with machine-actionable metadata is essential to advance modern science.</p>
+
+                          <div>
+                            <button class="button is-primary is-small js-modal-trigger" data-target="More-Content-Modal-0">
+                              More
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="is-flex fixed-grid research__bg has-1-cols-mobile" style="height: 100%; align-items: center; justify-content: center;">
+                  <div class="grid research__grid" style="justify-items: end; height: fit-content; max-height: fit-content;">
+                    <div class="cell research__cell" style="width: 100%; max-width: unset;">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div>
+                          <img src="content/images/research/biologicalDataScience.png" style="max-width: 100%;"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell research__cell">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div class="content research__content">
+                          <h1 id="biological-data-science">Biological data science</h1>
+<p>Modern technologies now allow researchers to simultaneously study biological organisms and processes across various molecular layers and in diverse biological contexts. To leverage this wealth of data, we are developing advanced methods for both supervised and unsupervised analysis of multi-modal omics data using cutting-edge machine learning and statistical modeling techniques. As part of fslabs.org, we contribute to the open-source data analysis library environment, ensuring that our innovations are accessible to the broader research community. Our methods enable comprehensive, data-driven integration and analysis of data derived from multiple omics technologies and varied biological scenarios, thereby enhancing our understanding of complex biological systems.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="is-flex fixed-grid research__bg has-1-cols-mobile" style="height: 100%; align-items: center; justify-content: center;">
+                  <div class="grid research__grid" style="justify-items: end; height: fit-content; max-height: fit-content;">
+                    <div class="cell research__cell" style="width: 100%; max-width: unset;">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div>
+                          <img src="content/images/research/predictionOmicsData.png" style="max-width: 100%;"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cell research__cell">
+                      <div style="display: flex; height: 100%; align-items: center;">
+                        <div class="content research__content">
+                          <h1 id="prediction-of-acclimation-modulators-and-integrators-based-on-omics-data">Prediction of acclimation modulators and integrators based on ‘omics data</h1>
+<p>Acclimation responses involve complex interactions among genes, proteins, and metabolites, resulting in both general and specific elements. Previously, we focused on extracting response-specific structural models from complex 'omics data using functional constraint aggregation and network topology inference.</p>
+
+                          <div>
+                            <button class="button is-primary is-small js-modal-trigger" data-target="More-Content-Modal-2">
+                              More
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="splide__progress">
+            <div class="splide__progress__bar"></div>
+          </div>
+          <button class="splide__toggle" type="button">
+            <svg class="splide__toggle__play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="m22 12-20 11v-22l10 5.5z"></path>
+            </svg>
+            <svg class="splide__toggle__pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="m2 1v22h7v-22zm13 0v22h7v-22z"></path>
+            </svg>
+          </button>
+        </section>
+        <script>
+          document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', { type: 'loop', autoplay: true } );
+    splide.mount();
+} );
+        </script>
+        <section>
+          <div class="modal" id="More-Content-Modal-0">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="content">
+                  <h1 id="research-data-management-rdm">Research data management (RDM)</h1>
+<p>We are committed to the success of FAIR (Findable, Accessible, Interoperable, and Reusable) and open research data. Research data possess immense value, which, when combined with tomorrow's technologies such as machine and deep learning, can unlock answers to questions we cannot even conceive today. Therefore, the flexible contextualization of research data with machine-actionable metadata is essential to advance modern science.</p>
+
+                  <p>We draw inspiration from the open-source software community's success, developing approaches that enable the biological community to collaboratively build a community-wide FAIR research data resource. Our research group participates in the National Research Data Infrastructure (NFDI) initiative with the DataPLANT project, which empowers plant researchers to engage in a thriving RDM ecosystem without barriers.</p>
+
+                </div>
+              </div>
             </div>
+            <button class="modal-close is-large" aria-label="close"></button>
           </div>
-          <div class="research__text">
-            <p>
-              The main focus of our group is the application and development of computational methods to process and integrate quantitative biological data from modern high-throughput measurements in order to gain novel insights into biological responses to environment changes. The main challenge is the rigorous integration of different system level analyses and present knowledge into biological interpretable models. Therefore, we want to drive theory and technology forward with a combination of biological science, applied informatics, statistical and machine learning approaches.
-            </p>
+          <div class="modal" id="More-Content-Modal-1">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="content">
+                  <h1 id="biological-data-science">Biological data science</h1>
+<p>Modern technologies now allow researchers to simultaneously study biological organisms and processes across various molecular layers and in diverse biological contexts. To leverage this wealth of data, we are developing advanced methods for both supervised and unsupervised analysis of multi-modal omics data using cutting-edge machine learning and statistical modeling techniques. As part of fslabs.org, we contribute to the open-source data analysis library environment, ensuring that our innovations are accessible to the broader research community. Our methods enable comprehensive, data-driven integration and analysis of data derived from multiple omics technologies and varied biological scenarios, thereby enhancing our understanding of complex biological systems.</p>
+
+                </div>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
           </div>
-        </div>
-      </section>
+          <div class="modal" id="More-Content-Modal-2">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="content">
+                  <h1 id="prediction-of-acclimation-modulators-and-integrators-based-on-omics-data">Prediction of acclimation modulators and integrators based on ‘omics data</h1>
+<p>Acclimation responses involve complex interactions among genes, proteins, and metabolites, resulting in both general and specific elements. Previously, we focused on extracting response-specific structural models from complex 'omics data using functional constraint aggregation and network topology inference.</p>
+
+                  <p>Predicting modulators and integrators based on regulatory network topology and differential expression levels remains challenging, especially with limited acclimation data. However, incorporating additional regulatory characteristics of proteins—such as thermostability, aggregation propensity, intrinsic disorder, and post-translational modifications—can improve this identification.</p>
+<p>This project proposes a novel approach using sequential meta-learning to integrate these regulatory characteristics, overcoming data sparsity challenges. In collaboration with CRC experimental groups, we will test our model’s predictions by introducing thermostable protein homologs into plant and algal cells. These experiments are expected to reduce acclimation capabilities and cause growth retardation, validating our approach in experimental evolution assays.</p>
+
+                </div>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </section>
+      </div>
       <section class="section section--people" id="team">
         <div class="container">
           <h2 class="section__title">
@@ -225,46 +356,6 @@
                   </div>
                 </div>
                 <div class="person">
-                  <img src="content/images/team/venn.png" alt="Benedikt Venn (PhD Student)" title="Benedikt Venn (PhD Student)" class="person__image"/>
-                  <h3 class="person__name">
-                    Benedikt Venn
-                  </h3>
-                  <span class="person__role">
-                    PhD Student
-                  </span>
-                  <div class="person__socials">
-                    <a class="person__github" href="https://github.com/bvenn">
-                      <i class="fab fa-github"></i>
-                    </a>
-                    <a class="person__orcid" href="https://orcid.org/0000-0003-4203-1596">
-                      <i class="fab fa-orcid"></i>
-                    </a>
-                    <a class="person__twitter" href="https://twitter.com/BenediktVenn">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="person">
-                  <img src="content/images/team/ott.jpg" alt="Caroline Ott (PhD Student)" title="Caroline Ott (PhD Student)" class="person__image"/>
-                  <h3 class="person__name">
-                    Caroline Ott
-                  </h3>
-                  <span class="person__role">
-                    PhD Student
-                  </span>
-                  <div class="person__socials">
-                    <a class="person__github" href="https://github.com/caroott">
-                      <i class="fab fa-github"></i>
-                    </a>
-                    <a class="person__orcid" href="https://orcid.org/0000-0003-1512-9504">
-                      <i class="fab fa-orcid"></i>
-                    </a>
-                    <a class="person__twitter" href="https://twitter.com/ott__caro">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="person">
                   <img src="content/images/team/weil.png" alt="Lukas Weil (PhD Student)" title="Lukas Weil (PhD Student)" class="person__image"/>
                   <h3 class="person__name">
                     Lukas Weil
@@ -342,19 +433,22 @@
                   </div>
                 </div>
                 <div class="person">
-                  <img src="content/images/team/ziegler.png" alt="Selina Ziegler (Research Associate)" title="Selina Ziegler (Research Associate)" class="person__image"/>
+                  <img src="content/images/team/ott.jpg" alt="Caroline Ott (PhD Student)" title="Caroline Ott (PhD Student)" class="person__image"/>
                   <h3 class="person__name">
-                    Selina Ziegler
+                    Caroline Ott
                   </h3>
                   <span class="person__role">
-                    Research Associate
+                    PhD Student
                   </span>
                   <div class="person__socials">
-                    <a class="person__github" href="https://github.com/zieglerSe">
+                    <a class="person__github" href="https://github.com/caroott">
                       <i class="fab fa-github"></i>
                     </a>
-                    <a class="person__orcid" href="https://orcid.org/0009-0002-4713-0040">
+                    <a class="person__orcid" href="https://orcid.org/0000-0003-1512-9504">
                       <i class="fab fa-orcid"></i>
+                    </a>
+                    <a class="person__twitter" href="https://twitter.com/ott__caro">
+                      <i class="fab fa-twitter"></i>
                     </a>
                   </div>
                 </div>
@@ -367,6 +461,22 @@
               <div class="persons">
                 <div class="person">
                   <div class="person__avatar">
+                    TS
+                  </div>
+                  <h3 class="person__name">
+                    Tobias Scheid
+                  </h3>
+                  <div class="person__socials">
+                    <a class="person__github" href="https://github.com/ScheidTo">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a class="person__email" href="mailto:tscheid@rptu.de">
+                      <i class="fa-solid fa-envelope"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="person">
+                  <div class="person__avatar">
                     PH
                   </div>
                   <h3 class="person__name">
@@ -375,6 +485,23 @@
                   <div class="person__socials">
                     <a class="person__github" href="https://github.com/paulineHans">
                       <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="person">
+                  <img src="content/images/team/paul.jpg" alt="Annika Paul (Bachelor Student)" title="Annika Paul (Bachelor Student)" class="person__image"/>
+                  <h3 class="person__name">
+                    Annika Paul
+                  </h3>
+                  <div class="person__socials">
+                    <a class="person__github" href="https://github.com/Rookabu">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a class="person__orcid" href="https://orcid.org/0009-0008-7417-0965">
+                      <i class="fab fa-orcid"></i>
+                    </a>
+                    <a class="person__email" href="mailto:paula@rptu.de">
+                      <i class="fa-solid fa-envelope"></i>
                     </a>
                   </div>
                 </div>
@@ -402,10 +529,10 @@
                         Felix Jung (Master Student)
                       </p>
                       <p>
-                        David Zimmer (PhD Student)
+                        Christopher Lux (Master Student)
                       </p>
                       <p>
-                        Christopher Lux (Master Student)
+                        David Zimmer (PhD Student)
                       </p>
                       <p>
                         Nathan Mikhaylenko (PhD Student)
@@ -421,13 +548,13 @@
                         Kevin Schneider (Master Student)
                       </p>
                       <p>
-                        Caroline Ott (Master Student)
-                      </p>
-                      <p>
                         Lukas Weil (Master Student)
                       </p>
                       <p>
                         Kevin Frey (Master Student)
+                      </p>
+                      <p>
+                        Caroline Ott (Master Student)
                       </p>
                     </div>
                   </li>
@@ -437,10 +564,10 @@
                     </div>
                     <div class="alumni__people">
                       <p>
-                        Patrick Blume (Master Student)
+                        Marc Gottlieb (Bachelor Student)
                       </p>
                       <p>
-                        Marc Gottlieb (Bachelor Student)
+                        Patrick Blume (Master Student)
                       </p>
                     </div>
                   </li>
@@ -450,16 +577,16 @@
                     </div>
                     <div class="alumni__people">
                       <p>
-                        Benedikt Venn (Master Student)
+                        David Zimmer (Master Student)
                       </p>
                       <p>
-                        David Zimmer (Master Student)
+                        Esther Wieczorek (Master Student)
                       </p>
                       <p>
                         Isabella Christina Capilla Navarro (Master Student)
                       </p>
                       <p>
-                        Esther Wieczorek (Master Student)
+                        Benedikt Venn (Master Student)
                       </p>
                     </div>
                   </li>
@@ -479,10 +606,10 @@
                     </div>
                     <div class="alumni__people">
                       <p>
-                        David Zimmer (Bachelor Student)
+                        Lukas Weil (Bachelor Student)
                       </p>
                       <p>
-                        Lukas Weil (Bachelor Student)
+                        David Zimmer (Bachelor Student)
                       </p>
                       <p>
                         Sabrina Gödel (Master Student)
@@ -557,17 +684,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    microLife
+                    The Plant journal : for cell and molecular biology
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2023
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Characterization of a soluble library of the Pseudomonas aeruginosa PAO1 membrane proteome with emphasis on c-di-GMP turnover enzymes
+                  PLANTdataHUB: a collaborative platform for continuous FAIR data sharing in plant research
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Scherhag A, Räschle M, Unbehend N, Venn B, Glueck D, <strong>Mühlhaus T</strong>, Keller S, {Pérez Patallo} E, Zehner S, Frankenberg-Dinkel N
+                  Weil H, Schneider K, Tschöpe M, Bauer J, Maus O, Frey K, Brilhaus D, {Martins Rodrigues} C, Doniparthi G, Wetzels F, Lukasczyk J, Kranz A, Grüning B, Zimmer D, Deßloch S, von Suchodoletz D, Usadel B, Garth C, <strong>Mühlhaus T</strong>
                 </div>
               </div>
             </div>
@@ -593,17 +720,35 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Nature Communications
+                    International Journal of Molecular Sciences
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2023
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Proteomics and constraint-based modelling reveal enzyme kinetic properties of Chlamydomonas reinhardtii on a genome scale
+                  DeepSTABp: A Deep Learning Approach for the Prediction of Thermal Protein Stability
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Arend M, Zimmer D, Xu R, Sommer F, <strong>Mühlhaus T</strong>, Nikoloski Z
+                  Jung F, Frey K, Zimmer D, <strong>Mühlhaus T</strong>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    microLife
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2023
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Characterization of a soluble library of the Pseudomonas aeruginosa PAO1 membrane proteome with emphasis on c-di-GMP turnover enzymes
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Scherhag A, Räschle M, Unbehend N, Venn B, Glueck D, <strong>Mühlhaus T</strong>, Keller S, {Pérez Patallo} E, Zehner S, Frankenberg-Dinkel N
                 </div>
               </div>
             </div>
@@ -629,35 +774,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    The Plant journal : for cell and molecular biology
+                    Nature Communications
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2023
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  PLANTdataHUB: a collaborative platform for continuous FAIR data sharing in plant research
+                  Proteomics and constraint-based modelling reveal enzyme kinetic properties of Chlamydomonas reinhardtii on a genome scale
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Weil H, Schneider K, Tschöpe M, Bauer J, Maus O, Frey K, Brilhaus D, {Martins Rodrigues} C, Doniparthi G, Wetzels F, Lukasczyk J, Kranz A, Grüning B, Zimmer D, Deßloch S, von Suchodoletz D, Usadel B, Garth C, <strong>Mühlhaus T</strong>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    International Journal of Molecular Sciences
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2023
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  DeepSTABp: A Deep Learning Approach for the Prediction of Thermal Protein Stability
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Jung F, Frey K, Zimmer D, <strong>Mühlhaus T</strong>
+                  Arend M, Zimmer D, Xu R, Sommer F, <strong>Mühlhaus T</strong>, Nikoloski Z
                 </div>
               </div>
             </div>
@@ -683,6 +810,24 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
+                    Journal of experimental botany
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2022
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Complexome profiling on the Chlamydomonas lpa2 mutant reveals insights into PSII biogenesis and new PSII associated proteins
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Spaniol B, Lang J, Venn B, Schake L, Sommer F, Mustas M, Geimer S, Wollman F, Choquet Y, <strong>Mühlhaus T</strong>, Schroda M
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
                     
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -701,17 +846,35 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    
+                    F1000Research
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2022
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Data Stewards as ambassadors between the NFDI and the community
+                  Plotly.NET: A fully featured charting library for .NET programming languages
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  von Suchodoletz D, <strong>Mühlhaus T</strong>, Brillhaus D, Jabeen H, Usadel B, Krüger J, Gauza H, {Martins Rodrigues} C
+                  Schneider K, Venn B, <strong>Mühlhaus T</strong>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Cell Systems
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2022
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  What differentiates a stress response from responsiveness in general?
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Vogel C, Balázsi G, Löwer A, Jiang C, Schmid A, Sommer M, Yang L, Münch C, Wang A, Israni-Winger K, <strong>Mühlhaus T</strong>, {Des Marais} D, Oster H, Socolovsky M
                 </div>
               </div>
             </div>
@@ -755,6 +918,24 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
+                    
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2022
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Data Stewards as ambassadors between the NFDI and the community
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  von Suchodoletz D, <strong>Mühlhaus T</strong>, Brillhaus D, Jabeen H, Usadel B, Krüger J, Gauza H, {Martins Rodrigues} C
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
                     Communications biology
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -766,78 +947,6 @@
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
                   Zhang N, Mattoon E, McHargue W, Venn B, Zimmer D, Pecani K, Jeong J, Anderson C, Chen C, Berry J, Xia M, Tzeng S, Becker E, Pazouki L, Evans B, Cross F, Cheng J, Czymmek K, Schroda M, <strong>Mühlhaus T</strong>, Zhang R
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Cell Systems
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2022
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  What differentiates a stress response from responsiveness in general?
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Vogel C, Balázsi G, Löwer A, Jiang C, Schmid A, Sommer M, Yang L, Münch C, Wang A, Israni-Winger K, <strong>Mühlhaus T</strong>, {Des Marais} D, Oster H, Socolovsky M
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Journal of experimental botany
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2022
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Complexome profiling on the Chlamydomonas lpa2 mutant reveals insights into PSII biogenesis and new PSII associated proteins
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Spaniol B, Lang J, Venn B, Schake L, Sommer F, Mustas M, Geimer S, Wollman F, Choquet Y, <strong>Mühlhaus T</strong>, Schroda M
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    F1000Research
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2022
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Plotly.NET: A fully featured charting library for .NET programming languages
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Schneider K, Venn B, <strong>Mühlhaus T</strong>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Molecular Neurodegeneration
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2021
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Parkinson mice show functional and molecular changes in the gut long before motoric disease onset
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Gries M, Christmann A, Schulte S, Weyland M, Rommel S, Martin M, Baller M, Röth R, Schmitteckert S, Unger M, Liu Y, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Timmermans J, Pintelon I, Rappold G, Britschgi M, Lashuel H, Menger M, Laschke M, Niesler B, Schäfer K
                 </div>
               </div>
             </div>
@@ -881,42 +990,6 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Frontiers in plant science
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2021
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Data Management and Modeling in Plant Biology
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Krantz M, Zimmer D, Adler S, Kitashova A, Klipp E, <strong>Mühlhaus T</strong>, Nägele T
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Science advances
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2021
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Topology of the redox network during induction of photosynthesis as revealed by time-resolved proteomics in tobacco
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Zimmer D, Swart C, Graf A, Arrivault S, Tillich M, Proost S, Nikoloski Z, Stitt M, Bock R, <strong>Mühlhaus T*</strong>, Boulouis A*
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
                     Nature Chemical Biology
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -953,6 +1026,42 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
+                    Molecular Neurodegeneration
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2021
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Parkinson mice show functional and molecular changes in the gut long before motoric disease onset
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Gries M, Christmann A, Schulte S, Weyland M, Rommel S, Martin M, Baller M, Röth R, Schmitteckert S, Unger M, Liu Y, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Timmermans J, Pintelon I, Rappold G, Britschgi M, Lashuel H, Menger M, Laschke M, Niesler B, Schäfer K
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Science advances
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2021
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Topology of the redox network during induction of photosynthesis as revealed by time-resolved proteomics in tobacco
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Zimmer D, Swart C, Graf A, Arrivault S, Tillich M, Proost S, Nikoloski Z, Stitt M, Bock R, <strong>Mühlhaus T*</strong>, Boulouis A*
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
                     Cell Reports
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -964,6 +1073,24 @@
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
                   Backes S, Bykov Y, Flohr T, Räschle M, Zhou J, Lenhard S, Krämer L, <strong>Mühlhaus T</strong>, Bibi C, Jann C, Smith J, Steinmetz L, Rapaport D, Storchová Z, Schuldiner M, Boos F, Herrmann J
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Frontiers in plant science
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2021
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Data Management and Modeling in Plant Biology
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Krantz M, Zimmer D, Adler S, Kitashova A, Klipp E, <strong>Mühlhaus T</strong>, Nägele T
                 </div>
               </div>
             </div>
@@ -1007,6 +1134,96 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
+                    The Plant cell
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2020
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Vernalization Alters Sink and Source Identities and Reverses Phloem Translocation from Taproots to Shoots in Sugar Beet (Beta vulgaris)
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  {Martins Rodrigues} C, Müdsam C, Keller I, Zierer W, Czarnecki O, Corral J, Reinhardt F, Nieberl P, Fiedler-Wieschers K, Sommer F, Schroda M, <strong>Mühlhaus T</strong>, Harms K, Flügge U, Sonnewald U, Koch W, Ludewig F, Neuhaus H, Pommerrenig B
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    iScience
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2020
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Translational Components Contribute to Acclimation Responses to High Light, Heat, and Cold in Arabidopsis
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Garcia-Molina A, Kleine T, Schneider K, <strong>Mühlhaus T</strong>, Lehmann M, Leister D
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Entropy
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2020
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  TMEA: A Thermodynamically Motivated Framework for Functional Characterization of Biological Responses to System Acclimation
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Schneider K, Venn B, <strong>Mühlhaus T</strong>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Frontiers in plant science
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2020
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Overexpression of Sedoheptulose-1,7-Bisphosphatase Enhances Photosynthesis in Chlamydomonas reinhardtii and Has No Effect on the Abundance of Other Calvin-Benson Cycle Enzymes
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Hammel A, Sommer F, Zimmer D, Stitt M, <strong>Mühlhaus T</strong>, Schroda M
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Molecular cell
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2020
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  The NADH Dehydrogenase Nde1 Executes Cell Death after Integrating Signals from Metabolism and Proteostasis on the Mitochondrial Surface
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Saladi S, Boos F, Poglitsch M, Meyer H, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Schuldiner M, Madeo F, Herrmann J
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
                     The Plant journal : for cell and molecular biology
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -1043,35 +1260,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Biochimica et biophysica acta. Bioenergetics
+                    
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2020
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Clingy genes: Why were genes for ribosomal proteins retained in many mitochondrial genomes?
+                  A Bloom Filter-Based Framework for Interactive Exploration of Large Scale Research Data
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Bertgen L, <strong>Mühlhaus T</strong>, Herrmann J
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Entropy
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2020
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  TMEA: A Thermodynamically Motivated Framework for Functional Characterization of Biological Responses to System Acclimation
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Schneider K, Venn B, <strong>Mühlhaus T</strong>
+                  Doniparthi G, <strong>Mühlhaus T</strong>, Deßloch S
                 </div>
               </div>
             </div>
@@ -1097,89 +1296,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    
+                    Biochimica et biophysica acta. Bioenergetics
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2020
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  A Bloom Filter-Based Framework for Interactive Exploration of Large Scale Research Data
+                  Clingy genes: Why were genes for ribosomal proteins retained in many mitochondrial genomes?
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Doniparthi G, <strong>Mühlhaus T</strong>, Deßloch S
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Molecular cell
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2020
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  The NADH Dehydrogenase Nde1 Executes Cell Death after Integrating Signals from Metabolism and Proteostasis on the Mitochondrial Surface
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Saladi S, Boos F, Poglitsch M, Meyer H, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Schuldiner M, Madeo F, Herrmann J
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    Frontiers in plant science
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2020
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Overexpression of Sedoheptulose-1,7-Bisphosphatase Enhances Photosynthesis in Chlamydomonas reinhardtii and Has No Effect on the Abundance of Other Calvin-Benson Cycle Enzymes
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Hammel A, Sommer F, Zimmer D, Stitt M, <strong>Mühlhaus T</strong>, Schroda M
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    The Plant cell
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2020
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Vernalization Alters Sink and Source Identities and Reverses Phloem Translocation from Taproots to Shoots in Sugar Beet (Beta vulgaris)
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  {Martins Rodrigues} C, Müdsam C, Keller I, Zierer W, Czarnecki O, Corral J, Reinhardt F, Nieberl P, Fiedler-Wieschers K, Sommer F, Schroda M, <strong>Mühlhaus T</strong>, Harms K, Flügge U, Sonnewald U, Koch W, Ludewig F, Neuhaus H, Pommerrenig B
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    iScience
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2020
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Translational Components Contribute to Acclimation Responses to High Light, Heat, and Cold in Arabidopsis
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Garcia-Molina A, Kleine T, Schneider K, <strong>Mühlhaus T</strong>, Lehmann M, Leister D
+                  Bertgen L, <strong>Mühlhaus T</strong>, Herrmann J
                 </div>
               </div>
             </div>
@@ -1205,17 +1332,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Biotechnology journal
+                    18th ECC
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2019
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Metabolic engineering of Corynebacterium glutamicum for high-level ectoine production - design, combinatorial assembly and implementation of a transcriptionally balanced heterologous ectoine pathway
+                  Curve form based quantization of short time series data
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Gießelmann G, Dietrich D, Jungmann L, Kohlstedt M, Jeon E, Yim S, Sommer F, Zimmer D, <strong>Mühlhaus T</strong>, Schroda M, Jeong K, Becker J, Wittmann C
+                  Leifeld T, Venn B, Cui S, Zhang Z, <strong>Mühlhaus T</strong>, Zhang P
                 </div>
               </div>
             </div>
@@ -1241,17 +1368,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    18th ECC
+                    Journal of neurochemistry
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2019
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Curve form based quantization of short time series data
+                  Poor transcript-protein correlation in the brain: negatively correlating gene products reveal neuronal polarity as a potential cause
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Leifeld T, Venn B, Cui S, Zhang Z, <strong>Mühlhaus T</strong>, Zhang P
+                  Moritz C, <strong>Mühlhaus T</strong>, Tenzer S, Schulenborg T, Friauf E
                 </div>
               </div>
             </div>
@@ -1295,35 +1422,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Journal of neurochemistry
+                    Biotechnology journal
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2019
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Poor transcript-protein correlation in the brain: negatively correlating gene products reveal neuronal polarity as a potential cause
+                  Metabolic engineering of Corynebacterium glutamicum for high-level ectoine production - design, combinatorial assembly and implementation of a transcriptionally balanced heterologous ectoine pathway
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Moritz C, <strong>Mühlhaus T</strong>, Tenzer S, Schulenborg T, Friauf E
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    The Journal of cell biology
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2018
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Tom70 enhances mitochondrial preprotein import efficiency by binding to internal targeting sequences
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Backes S, Hess S, Boos F, Woellhaf M, Gödel S, Jung M, <strong>Mühlhaus T</strong>, Herrmann J
+                  Gießelmann G, Dietrich D, Jungmann L, Kohlstedt M, Jeon E, Yim S, Sommer F, Zimmer D, <strong>Mühlhaus T</strong>, Schroda M, Jeong K, Becker J, Wittmann C
                 </div>
               </div>
             </div>
@@ -1349,17 +1458,17 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Frontiers in plant science
+                    The Journal of cell biology
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
                     2018
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Artificial Intelligence Understands Peptide Observability and Assists With Absolute Protein Quantification
+                  Tom70 enhances mitochondrial preprotein import efficiency by binding to internal targeting sequences
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Zimmer D, Schneider K, Sommer F, Schroda M, <strong>Mühlhaus T</strong>
+                  Backes S, Hess S, Boos F, Woellhaf M, Gödel S, Jung M, <strong>Mühlhaus T</strong>, Herrmann J
                 </div>
               </div>
             </div>
@@ -1374,10 +1483,10 @@
                   </div>
                 </div>
                 <div class="content p-2 mb-1 is-size-5">
-                  Absolute Quantification of Major Photosynthetic Protein Complexes in Chlamydomonas reinhardtii Using Quantification Concatamers (QconCATs)
+                  Artificial Intelligence Understands Peptide Observability and Assists With Absolute Protein Quantification
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Hammel A, Zimmer D, Sommer F, <strong>Mühlhaus T</strong>, Schroda M
+                  Zimmer D, Schneider K, Sommer F, Schroda M, <strong>Mühlhaus T</strong>
                 </div>
               </div>
             </div>
@@ -1414,6 +1523,24 @@
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
                   Müller N, Leroch M, Schumacher J, Zimmer D, Könnel A, Klug K, Leisen T, Scheuring D, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Hahn M
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    Frontiers in plant science
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2018
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Absolute Quantification of Major Photosynthetic Protein Complexes in Chlamydomonas reinhardtii Using Quantification Concatamers (QconCATs)
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Hammel A, Zimmer D, Sommer F, <strong>Mühlhaus T</strong>, Schroda M
                 </div>
               </div>
             </div>
@@ -1493,24 +1620,6 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
-                    Nature Plants
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2015
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Identification of the transporter responsible for sucrose accumulation in sugar beet taproots
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Jung B, Ludewig F, Schulz A, Meißner G, Wöstefeld N, Flügge U, Pommerrenig B, Wirsching P, Sauer N, Koch W, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Cuin T, Graus D, Marten I, Hedrich R, Neuhaus H
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
                     Biochimica et biophysica acta
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -1547,6 +1656,42 @@
               <div class="box has-background-white has-text-black p-0">
                 <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
                   <b class="p-2 has-text-white">
+                    Nature Plants
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2015
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Identification of the transporter responsible for sucrose accumulation in sugar beet taproots
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Jung B, Ludewig F, Schulz A, Meißner G, Wöstefeld N, Flügge U, Pommerrenig B, Wirsching P, Sauer N, Koch W, Sommer F, <strong>Mühlhaus T</strong>, Schroda M, Cuin T, Graus D, Marten I, Hedrich R, Neuhaus H
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
+                    The Plant cell
+                  </b>
+                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                    2014
+                  </div>
+                </div>
+                <div class="content p-2 mb-1 is-size-5">
+                  Systems Analysis of the Response of Photosynthesis, Metabolism, and Growth to an Increase in Irradiance in the Photosynthetic Model Organism Chlamydomonas reinhardtii
+                </div>
+                <div class="publication__authors content p-2 is-size-7 is-family-code">
+                  Mettler T, <strong>Mühlhaus T</strong>, Hemme D, Schöttler M, Rupprecht J, Idoine A, Veyel D, Pal S, Yaneva-Roder L, Winck F, Sommer F, Vosloh D, Seiwert B, Erban A, Burgos A, Arvidsson S, Schönfelder S, Arnold A, Günther M, Krause U, Lohse M, Kopka J, Nikoloski Z, Mueller-Roeber B, Willmitzer L, Bock R, Schroda M, Stitt M
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third publication">
+              <div class="box has-background-white has-text-black p-0">
+                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                  <b class="p-2 has-text-white">
                     The Plant cell
                   </b>
                   <div class="p-2 has-background-primary-light" style="margin-left: auto;">
@@ -1576,24 +1721,6 @@
                 </div>
                 <div class="publication__authors content p-2 is-size-7 is-family-code">
                   Ramundo S, Casero D, <strong>Mühlhaus T</strong>, Hemme D, Sommer F, Crevecoeur M, Rahire M, Schroda M, Rusch J, Goodenough U, Pellegrini M, Perez-Perez M, Crespo J, Schaad O, Civic N, Rochaix J
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third publication">
-              <div class="box has-background-white has-text-black p-0">
-                <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
-                  <b class="p-2 has-text-white">
-                    The Plant cell
-                  </b>
-                  <div class="p-2 has-background-primary-light" style="margin-left: auto;">
-                    2014
-                  </div>
-                </div>
-                <div class="content p-2 mb-1 is-size-5">
-                  Systems Analysis of the Response of Photosynthesis, Metabolism, and Growth to an Increase in Irradiance in the Photosynthetic Model Organism Chlamydomonas reinhardtii
-                </div>
-                <div class="publication__authors content p-2 is-size-7 is-family-code">
-                  Mettler T, <strong>Mühlhaus T</strong>, Hemme D, Schöttler M, Rupprecht J, Idoine A, Veyel D, Pal S, Yaneva-Roder L, Winck F, Sommer F, Vosloh D, Seiwert B, Erban A, Burgos A, Arvidsson S, Schönfelder S, Arnold A, Günther M, Krause U, Lohse M, Kopka J, Nikoloski Z, Mueller-Roeber B, Willmitzer L, Bock R, Schroda M, Stitt M
                 </div>
               </div>
             </div>
@@ -1835,6 +1962,83 @@
                         <div class="content">
                           <p>
                             In Computational Systems Biology, millions of data points on proteins, genes, tissues, and more are often analyzed and integrated for systemic studies. The volume and complexity of this data make it challenging to extract meaningful patterns and biological knowledge from it. Consequently, employing advanced methodologies becomes exceedingly crucial to solve such problems on a global scale. This course will provide students with fundamental knowledge that empowers them to understand the application of quantitative methods in addressing biological challenges and facilitating innovative breakthroughs.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="box has-background-white has-text-black p-0">
+                    <div class="is-flex is-flex-direction-row is-flex-grow-1 has-background-primary mb-2">
+                      <div class="p-2 has-text-white">
+                        BIO-BTE-10-L-4
+                      </div>
+                      <div class="p-2 has-background-primary-light" style="margin-left: auto;">
+                        Project
+                      </div>
+                    </div>
+                    <div class="p-2">
+                      <div class="field">
+                        <h1 class="title is-6">
+                          Project
+                          <span class="is-family-code has-text-weight-normal">
+                             for 
+                          </span>
+                          Bachelor Molekulare Biologie
+                        </h1>
+                        <h2 class="subtitle">
+                          Scientific Programming for Biologists
+                        </h2>
+                      </div>
+                      <div class="field">
+                        <div class="content">
+                          <h6 class="has-text-primary">
+                            9 CP - Semester-missing
+                          </h6>
+                          <div class="is-family-code" style="margin-top: -1rem;">
+                            <a href="https://olat.vcrp.de/url/RepositoryEntry/4099538993">
+                              OpenOlat
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="content">
+                          <p>
+                            <div class="flex-shrink-0 flex flex-col relative items-end">
+<div>
+<div class="pt-0.5 juice:pt-0">
+<div class="gizmo-bot-avatar flex h-6 w-6 items-center justify-center overflow-hidden rounded-full juice:h-8 juice:w-8">
+<div class="relative p-1 rounded-sm flex items-center justify-center bg-token-main-surface-primary text-token-text-primary h-8 w-8">Put your skills into practice with an individual project in the field of bioinformatics. This course offers a unique opportunity to apply theoretical knowledge in a practical setting, allowing you to tackle real-world problems and develop solutions that can have a significant impact on the field.</div>
+<div class="relative p-1 rounded-sm flex items-center justify-center bg-token-main-surface-primary text-token-text-primary h-8 w-8">Potential project topics cover the entire spectrum of bioinformatics, offering a diverse range of challenges and learning experiences. You can explore various areas including:</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex-col gap-1 md:gap-3">
+<div class="flex flex-grow flex-col max-w-full">
+<div>
+<div class="flex w-full flex-col gap-1 juice:empty:hidden juice:first:pt-[3px]">
+<div class="markdown prose w-full break-words dark:prose-invert dark">
+<ul><li>
+<strong>Algorithm Development:</strong> Implement algorithms for analyzing biological data, such as DNA sequences, protein structures, or gene expression profiles. These algorithms can help identify patterns, make predictions, and uncover new insights into biological processes.
+</li><li>
+<strong>Data Analysis and Visualization:</strong> Apply and implement methods to process and visualize large-scale biological data sets. This could involve creating visualizations to represent complex data or developing pipelines to automate data analysis workflows.
+</li><li>
+<strong>Systems Biology:</strong> Work on integrating data from various biological systems to understand how they interact and function as a whole. Projects might involve modeling biological networks, or analyzing cellular processes and metabolic pathways.
+</li><li>
+<strong>Web Service Implementation:</strong> Design and implement web-based tools and services that allow researchers to access or analyze biological data. This could include creating databases, developing APIs, or building user-friendly interfaces for existing bioinformatics tools.
+</li></ul>
+You have the flexibility to discuss your own project idea or choose from a list of proposed projects.
+By engaging in these projects, you will gain hands-on experience, enhance your problem-solving skills, and develop a deeper understanding of bioinformatics. This practical approach not only reinforces your existing knowledge but also prepares you for future research or professional work in the field<strong>.</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
                           </p>
                         </div>
                       </div>
