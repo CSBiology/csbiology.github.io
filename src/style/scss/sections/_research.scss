@@ -13,8 +13,9 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }
-  @media (max-width: 639px) {
-    border-radius: unset;
+
+  @media (max-width: 768px) {
+    border-radius: unset; 
   }
 }
 
@@ -28,6 +29,10 @@
 .research__grid {
   max-width: 80%;
   column-gap: unset;
+
+  @media (max-width: 768px) {
+    row-gap: unset; // Adjusted max-width for tiny screens
+  }
 
   @media (max-width: 639px) {
     max-width: unset; // Adjusted max-width for tiny screens

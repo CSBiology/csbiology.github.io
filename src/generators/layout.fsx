@@ -1,6 +1,5 @@
 #r "../_lib/Fornax.Core.dll"
 
-
 open Html
 
 let rptu_navbar() =
@@ -77,7 +76,6 @@ let scaffold (ctx : SiteContents) bodyCnt =
             rptu_navbar()
             csb_navbar()
             main [Class "csb-content"] [
-                // bodyCnt
                 yield! bodyCnt
             ]
             
@@ -110,6 +108,7 @@ let scaffold (ctx : SiteContents) bodyCnt =
                             })(document);
                         """
             ]
+
         ]  
     ]
         

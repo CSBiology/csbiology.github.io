@@ -5,14 +5,47 @@
 
 open Html
 
+let private SliderHeight = "fit-content"
+let private createModalId(slide: Researchloader.FrameSlide) =
+  sprintf "More-Content-Modal-%i" slide.Index
+
+
+let private createResearchModal(slide: Researchloader.FrameSlide) =
+  let id = createModalId slide
+  // Bulma Modal
+  div [Class "modal"; HtmlProperties.Id id] [
+    div [Class "modal-background"] []
+    div [Class "modal-content"] [
+      div [Class "box"] [
+        div [Class "content"] [
+          !!slide.MainContent
+          match slide.MoreContent with
+          | Some c ->
+            !!c
+          | None -> ()
+        ]
+      ]
+    ]
+    button [Class "modal-close is-large"; HtmlProperties.Custom("aria-label", "close")] []
+  ]
+
+
+let private createMoreContentModalButton (slide: Researchloader.FrameSlide) =
+  let id = createModalId slide
+  div [] [
+    // Trigger Button
+    button [Class "button is-primary is-small js-modal-trigger"; HtmlProperties.Custom("data-target", id)] [
+      !!"More"
+    ]
+  ]
 
 let private createFrameSlide (slide: Researchloader.FrameSlide) =
   let innerFlexBoxContainer = HtmlProperties.Style [Display "flex"; CSSProperties.Height "100%"; AlignItems "center"]
   li [Class "splide__slide"] [
       // container
-      div [Class "is-flex fixed-grid research__bg"; HtmlProperties.Style [CSSProperties.Height "100%"; AlignItems "center"; JustifyContent "center"]] [
-          div [Class "grid research__grid"; HtmlProperties.Style [CSSProperties.Custom("justify-items", "end"); CSSProperties.Height "fit-content";]] [
-              div [Class "cell research__cell"] [
+      div [Class "is-flex fixed-grid research__bg has-1-cols-mobile"; HtmlProperties.Style [CSSProperties.Height "100%"; AlignItems "center"; JustifyContent "center"]] [
+          div [Class "grid research__grid"; HtmlProperties.Style [CSSProperties.Custom("justify-items", "end"); CSSProperties.Height "fit-content"; CSSProperties.MaxHeight SliderHeight]] [
+              div [Class "cell research__cell"; HtmlProperties.Style [CSSProperties.Width "100%"; CSSProperties.MaxWidth "unset"]] [
                 div [innerFlexBoxContainer] [
                   div [] [
                     img [
@@ -27,7 +60,13 @@ let private createFrameSlide (slide: Researchloader.FrameSlide) =
               ]
               div [Class "cell research__cell"] [
                 div [innerFlexBoxContainer] [
-                  div [Class "content research__content"] [!!slide.Content]
+                  div [Class "content research__content"] [
+                      !!slide.MainContent
+                      match slide.MoreContent with
+                      | Some _ ->
+                          createMoreContentModalButton(slide)
+                      | None -> ()
+                  ]
                 ]
               ]
           ]
@@ -39,7 +78,7 @@ let generate (ctx : SiteContents) (_: string) =
         ctx.TryGetValues<Researchloader.FrameSlide> ()
         |> Option.defaultValue Seq.empty
         |> Seq.toList
-    div [HtmlProperties.Style [CSSProperties.Height "400px"]] [
+    div [HtmlProperties.Style [CSSProperties.Height SliderHeight]] [
         section [Class "splide"; HtmlProperties.Custom("aria-label","current research information")] [
             // div [Class "splide__slider"] [
             // ]
@@ -64,8 +103,12 @@ let generate (ctx : SiteContents) (_: string) =
         ]
         script [] [
             !!"""document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide( '.splide', { type: 'loop', autoplay: true } );
+    var splide = new Splide( '.splide', { type: 'loop', autoplay: false } );
     splide.mount();
 } );"""
+        ]
+        section [] [
+          for researchSlide in researchList do
+            createResearchModal researchSlide
         ]
     ]
