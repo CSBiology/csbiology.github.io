@@ -23,7 +23,7 @@ let layoutLecture (lex:Teachingloader.Teaching) =
             ]
             div [Class "p-2"] [ // body
                 div [Class "field"] [
-                    h1 [Class "title is-6"] [ 
+                    h1 [Class "title is-4"] [ 
                         !!courseType
                         span [Class "is-family-code has-text-weight-normal"] [!! " for "]
                         if lex.Audience <> "" then
@@ -31,7 +31,7 @@ let layoutLecture (lex:Teachingloader.Teaching) =
                         else
                             !!"Mixed Audience"
                     ]
-                    h2 [Class "subtitle"] [!!lex.Title]
+                    h2 [Class "subtitle is-6 mt-0"] [!!lex.Title]
                 ]
                 div [Class "field"] [
                     div [Class "content"] [ // cont
