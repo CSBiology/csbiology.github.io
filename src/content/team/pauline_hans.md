@@ -1,6 +1,6 @@
 ---
 name: Pauline Hans
-img: PaulineHans.jpg
+img: hans.jpg
 role: Bachelor student
 github: paulineHans
 ---
