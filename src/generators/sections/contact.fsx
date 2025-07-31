@@ -23,7 +23,7 @@ let generate (ctx : SiteContents) (_: string) =
         div [Class "container"] [
             div [] [
                 h3 [] [ !! "Contact" ]
-                a [Href "https://www.bio.uni-kl.de/biologie-in-kaiserslautern/"] [!!"Faculty"]
+                a [Href "https://bio.rptu.de/kontakt"] [!!"Faculty"]
                 a [Href "http://www.uni-kl.de/impressum/"] [!!"Impressum"]
                 a [Href "http://www.uni-kl.de/datenschutzerklaerung/"] [!!"Datenschutz"]                
             ]
