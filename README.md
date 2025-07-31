@@ -1,62 +1,46 @@
-# csbiology.github.io
+# Astro Starter Kit: Basics
 
-The official [CSB-Website](https://csbiology.github.io).
-
-
-# Local Development
-
-## Setup
-
-1. `dotnet tool restore`
-2. `npm install`
-3. Add olat password as `src/loaders/olat.p`, containing only the password as raw string.
-
-## Update css from scss
-
-- `npm run update-css`, will create minified css from `src/style/scss/main.scss`.
-
-## Run
-
-1. `npm run fornax`
-2. Go to [http://127.0.0.1:8080](http://127.0.0.1:8080).
-
-## Site Config Information:
-
-### Team Members
-
-*Using myself as an example*
-
-Create a `.md` file with your name in snake_case in `src/content/team`. All fields not marked with an `#!` are optional.
-
-```yaml
-# src/content/team/kevin_frey.md
----
-name: Kevin Frey #!
-img: frey.png
-role: PhD Student #!
-github: Freymaurer
-orcid: 0000-0002-8510-6810
-alumni: 2020-Master Student
-phone: +49 000 111 4242 # this is only an example 
-email: freyk@rptu.de
----
+```sh
+npm create astro@latest -- --template basics
 ```
 
-### Research
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Create a `.md` file in `src/content/research`. All fields without an `#!` are optional.
+## 🚀 Project Structure
 
-Images must be places in `src/content/images/research`.
+Inside of your Astro project, you'll see the following folders and files:
 
-Without `index` slides are sorted to the end.
-
-```yaml
----
-index: <int>
-img: <image_name_in_folder>
-img_url: <url_to_image>
----
-# My cool research
-
-Any content in **markdown**!
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
+
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

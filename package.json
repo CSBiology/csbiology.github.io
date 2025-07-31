@@ -1,26 +1,22 @@
 {
-  "name": "csbiology.github.io",
-  "version": "1.0.0",
-  "description": "The csb website",
+  "name": "csbiology-website",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "fornax": "cd ./src && dotnet fornax watch",
-    "build": "cd ./src && dotnet fornax build",
-    "update-css": "sass ./src/style/scss/main.scss:./src/style/css/main.css --style compressed"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CSBiology/csbiology.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CSBiology/csbiology.github.io/issues"
-  },
-  "homepage": "https://github.com/CSBiology/csbiology.github.io#readme",
-  "devDependencies": {
-    "sass": "^1.63.6"
+    "start": "astro dev",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "bulma": "^0.9.4"
+    "@astrojs/react": "^4.3.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.12.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.11"
   }
 }
