@@ -1,5 +1,5 @@
 ---
 name: Patrick Blume
-role: alumni
+role: Scientific assistant
 alumni: 2019-Master Student
 ---

@@ -1,5 +1,6 @@
 ---
 name: Pauline Hans
-role: Bachelor student
+role: Master student
 github: paulineHans
+alumni: 2025-Bachelor student
 ---
