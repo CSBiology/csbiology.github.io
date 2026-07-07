@@ -239,11 +239,12 @@ body {
 
 
 //TEAM
-.persons {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+.persons { 
+  display: flex; 
+  flex-wrap: wrap; 
+  width: 100%; 
+  justify-content: center;
+  gap: 1rem; 
 }
 
 .alumni-container {
@@ -293,6 +294,8 @@ body {
     text-align: center;
     padding: 0 .5rem;
     margin-bottom: 2rem;
+    max-width: 225px;
+    justify-content: flex-start;
 
     @include min(40em) {
         // width: 25%;
@@ -302,21 +305,23 @@ body {
         margin: 1rem 0 .2rem 0;
         font-size: 1.2rem;
         text-transform: none;
+        overflow-wrap: break-word; // Preferred
+        word-break: break-word;    // Fallback for some browsers
     }
 
     .person__avatar,
     .person__image {
         display: block;
         width: 7rem;
-        height: auto;
+        height: 7rem;
         margin: 0 auto;
         border-radius: 50%;
         filter: grayscale(100%);
     }
     .person__avatar {
-        width: 5rem;
-        height: 5rem;
-        line-height: 5rem;
+        width: 7rem;
+        height: 7rem;
+        line-height: 7rem;
         background: $color-grey;
         color: white;
         font-size: 2rem;
