@@ -10689,6 +10689,19 @@ body {
   align-content: stretch;
 }
 
+/* Make padding bigger on large screens and minimal on smaller screens */
+.research__bg {
+  padding: 0.25rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 2rem;
+  }
+}
+
 .research__title,
 .research__text {
   width: 100%;
