@@ -1,8 +1,7 @@
 ---
 name: Add a new publication
-about: 'You are bachelor/master student or scientific staff member of the CSB but
-  missing from the website? '
-title: Add me!
+about: 'You want to add a new publication to our website?'
+title: Add publication!
 labels: ''
 assignees: Freymaurer
 
@@ -10,8 +9,9 @@ assignees: Freymaurer
 
 <!--You can find some examples here: https://github.com/CSBiology/csbiology.github.io/tree/main/src/content/publications/featured!-->
 
-
 ### **Publication BibTeX**
+
+<!--You MUST fullfil ONE of the options below-->
 
 You can either:
 
@@ -22,3 +22,10 @@ You can either:
 ```bib
 
 ```
+
+<!--Should the publication be 'featured'? I assume you have asked Timo if you marked "yes" below!-->
+
+**Featured?**
+
+- [ ] Yes
+- [ ] No
