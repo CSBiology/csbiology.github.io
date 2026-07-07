@@ -82,13 +82,15 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
     let postsPath = Path.Combine(projectRoot, contentDir)
     let options = EnumerationOptions(RecurseSubdirectories = false)
     let files = Directory.GetFiles(postsPath, "*", options)
+    
     files
     |> Array.filter (fun n -> n.EndsWith ".bib")
     |> Array.map (loadFile false)
     |> Array.iter siteContent.Add
     
-    let files = Directory.GetFiles(postsPath+"/featured/", "*", options)
-    files
+
+    let featuredFiles = Directory.GetFiles(postsPath+"/featured/", "*", options)
+    featuredFiles
     |> Array.filter (fun n -> n.EndsWith ".bib")
     |> Array.map (loadFile true)
     |> Array.iter siteContent.Add
