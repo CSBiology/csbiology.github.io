@@ -13,7 +13,7 @@ The official [CSB-Website](https://csbiology.github.io).
 
 ## Update css from scss
 
-- `npm run update-css`, will create minified css from `src/style/scss/main.scss`.
+- `npm run update-css`, will create minified css from `src/style/scss/main.scss`. Restart the fornax server to see changes.
 
 ## Run
 
