@@ -15,7 +15,7 @@
   }
 
   @media (max-width: 768px) {
-    border-radius: unset; 
+    border-radius: unset !important; 
   }
 }
 
@@ -24,6 +24,16 @@
   background-size: 50% 100%;
   background-image: url(../img/research_bg.jpg);
   background-position: left center;
+  /* Make padding bigger on large screens and minimal on smaller screens */
+  padding: 0.25rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 2rem;
+  }
 }
 
 .research__grid {
