@@ -6,7 +6,15 @@
       "version": "0.15.1",
       "commands": [
         "fornax"
-      ]
+      ],
+      "rollForward": false
+    },
+    "fantomas": {
+      "version": "7.0.5",
+      "commands": [
+        "fantomas"
+      ],
+      "rollForward": false
     }
   }
 }

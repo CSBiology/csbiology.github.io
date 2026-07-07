@@ -78,7 +78,7 @@ let generate (ctx : SiteContents) (_: string) =
         ctx.TryGetValues<Researchloader.FrameSlide> ()
         |> Option.defaultValue Seq.empty
         |> Seq.toList
-    div [HtmlProperties.Style [CSSProperties.Height SliderHeight]] [
+    div [HtmlProperties.Style [CSSProperties.Height SliderHeight]; HtmlProperties.Id "research"] [
         section [Class "splide"; HtmlProperties.Custom("aria-label","current research information")] [
             // div [Class "splide__slider"] [
             // ]
