@@ -1,5 +1,5 @@
 ---
-name: Kevin Frey the Maximus Third of Awesome
+name: Kevin Frey
 img: frey.png
 role: PhD Student
 github: Freymaurer
