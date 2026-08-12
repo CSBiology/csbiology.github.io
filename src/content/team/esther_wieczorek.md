@@ -1,5 +1,9 @@
 ---
 name: Esther Wieczorek
-role: alumni
-alumni: 2018-Master Student, 2015-Bachelor Student
+role: Alumni
+alumni:
+  - year: 2018
+    role: Master Student
+  - year: 2015
+    role: Bachelor Student
 ---

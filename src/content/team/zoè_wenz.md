@@ -1,4 +1,4 @@
 ---
 name: Zoè Wenz
-role: Bachelor student
+role: Bachelor Student
 ---

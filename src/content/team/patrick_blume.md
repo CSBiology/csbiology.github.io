@@ -1,5 +1,7 @@
 ---
 name: Patrick Blume
-role: Scientific assistant
-alumni: 2019-Master Student
+role: Scientific Assistant
+alumni:
+  - year: 2019
+    role: Master Student
 ---

@@ -1,4 +1,4 @@
 ---
 name: Vanessa Leidl
-role: Master student
+role: Master Student
 ---

@@ -1,4 +1,4 @@
 ---
 name: Christel Sakhel
-role: Master student
+role: Master Student
 ---

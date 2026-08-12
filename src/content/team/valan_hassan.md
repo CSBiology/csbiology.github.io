@@ -1,4 +1,4 @@
 ---
 name: Valan Hassan
-role: Bachelor student
+role: Bachelor Student
 ---

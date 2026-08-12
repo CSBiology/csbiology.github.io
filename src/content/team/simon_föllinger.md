@@ -1,4 +1,4 @@
 ---
 name: Simon Föllinger
-role: Master student
+role: Master Student
 ---

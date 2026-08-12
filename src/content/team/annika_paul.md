@@ -1,9 +1,12 @@
 ---
 name: Annika Paul
 img: paul.jpg
-role: Master student
-github: Rookabu
-orcid: 0009-0008-7417-0965
+role: Master Student
+socials:
+  github: Rookabu
+  orcid: 0009-0008-7417-0965
 email: paula@rptu.de
-alumni: 2025-Bachelor student
+alumni:
+  - year: 2025
+    role: Bachelor Student
 ---

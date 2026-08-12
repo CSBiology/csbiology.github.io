@@ -1,9 +1,12 @@
 ---
 name: Kevin Frey
-img: @assets/team/frey.png
+img: "@assets/team/frey.png"
 role: PhD Student
-github: Freymaurer
-orcid: 0000-0002-8510-6810
-alumni: 2020-Master Student
+socials:
+  github: Freymaurer
+  orcid: 0000-0002-8510-6810
 email: freyk@rptu.de
+alumni:
+  - year: 2020
+    role: Master Student
 ---

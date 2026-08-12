@@ -1,4 +1,4 @@
 ---
 name: Emre Filiz
-role: Master student
+role: Master Student
 ---

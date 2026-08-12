@@ -1,5 +1,7 @@
 ---
 name: Marc Gottlieb
-role: alumni
-alumni: 2019-Bachelor Student
+role: Alumni
+alumni:
+  - year: 2019
+    role: Bachelor Student
 ---

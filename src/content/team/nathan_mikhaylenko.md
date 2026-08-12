@@ -1,5 +1,7 @@
 ---
 name: Nathan Mikhaylenko
-role: alumni
-alumni: 2022-PhD Student
+role: Alumni
+alumni:
+  - year: 2022
+    role: PhD Student
 ---

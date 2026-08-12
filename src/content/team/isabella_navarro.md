@@ -1,5 +1,7 @@
 ---
 name: Isabella Christina Capilla Navarro
-role: alumni
-alumni: 2018-Master Student
+role: Alumni
+alumni:
+  - year: 2018
+    role: Master Student
 ---

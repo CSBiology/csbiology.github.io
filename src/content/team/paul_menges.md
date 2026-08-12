@@ -1,5 +1,7 @@
 ---
 name: Paul Menges
-role: alumni
-alumni: 2015-Bachelor Student
+role: Alumni
+alumni:
+  - year: 2015
+    role: Bachelor Student
 ---

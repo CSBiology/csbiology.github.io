@@ -1,7 +1,10 @@
 ---
 name: Josephine Scheid
-role: Master student
-github: ScheidTo
+role: Master Student
+socials:
+  github: ScheidTo
 email: tscheid@rptu.de
-alumni: 2025-Bachelor student
+alumni:
+  - year: 2025
+    role: Bachelor Student
 ---

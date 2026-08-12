@@ -2,8 +2,13 @@
 name: Kevin Schneider
 img: schneider.jpg
 role: PhD Student
-orcid: 0000-0002-2198-5262
-github: kMutagene
-alumni: 2020-Master Student, 2017-Bachelor Student
+socials:
+  orcid: 0000-0002-2198-5262
+  github: kMutagene
 email: schneike@rptu.de
+alumni:
+  - year: 2020
+    role: Master Student
+  - year: 2017
+    role: Bachelor Student
 ---
