@@ -1,0 +1,28 @@
+---
+interface Props {
+  size?: "sm" | "md" | "lg";
+  color?: "ink" | "ink-muted" | "accent" | "accent-red" | "accent-blue";
+  tag?: "span" | "div" | "p";
+  class?: string;
+}
+
+const { size = "md", color = "ink", tag: Tag = "span", class: className } = Astro.props;
+
+const sizeClasses = {
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-2xl",
+};
+
+const colorClasses = {
+  ink: "text-ink",
+  "ink-muted": "text-ink-muted",
+  accent: "text-accent",
+  "accent-red": "text-accent-red",
+  "accent-blue": "text-accent-blue",
+};
+---
+
+<Tag class:list={["font-hand leading-snug", sizeClasses[size], colorClasses[color], className]}>
+  <slot />
+</Tag>

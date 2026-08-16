@@ -1,0 +1,22 @@
+@utility paper-grain {
+  background-image:
+    radial-gradient(oklch(45% 0.025 60 / 0.035) 1px, transparent 1.4px),
+    radial-gradient(oklch(28% 0.03 60 / 0.02) 1px, transparent 1.2px);
+  background-size: 7px 9px, 11px 13px;
+  background-position: 0 0, 3px 5px;
+}
+
+@utility paper-ruled {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 1.55em,
+    oklch(70% 0.03 60 / 0.4) 1.55em,
+    oklch(70% 0.03 60 / 0.4) calc(1.55em + 1px)
+  );
+}
+
+@utility paper-edge {
+  box-shadow:
+    inset 8px 0 14px -10px oklch(60% 0.02 80 / 0.55),
+    inset -8px 0 14px -10px oklch(60% 0.02 80 / 0.55);
+}

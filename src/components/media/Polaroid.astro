@@ -1,0 +1,25 @@
+---
+import Tape from "../paper/Tape.astro";
+import { rotationClasses, type Rotation } from "@lib/journal";
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  rotation?: Rotation;
+  tape?: boolean;
+  class?: string;
+}
+
+const { src, alt, caption, rotation = "none", tape = false, class: className } = Astro.props;
+---
+
+<div class:list={["relative", className]}>
+  <figure class:list={["border border-line bg-paper p-4 pb-6 shadow-md", rotationClasses[rotation]]}>
+    <img src={src} alt={alt} class="block h-auto w-full" />
+    {caption && (
+      <figcaption class="mt-4 text-center font-hand text-sm text-ink">{caption}</figcaption>
+    )}
+  </figure>
+  {tape && <Tape position="top-left" />}
+</div>

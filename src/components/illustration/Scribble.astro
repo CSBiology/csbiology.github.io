@@ -1,0 +1,28 @@
+---
+import circleSvg from "@assets/svg/circle.svg?raw";
+import dividerSvg from "@assets/svg/divider.svg?raw";
+import scribbleSvg from "@assets/svg/scribble.svg?raw";
+import starSvg from "@assets/svg/star.svg?raw";
+import underlineSvg from "@assets/svg/underline.svg?raw";
+
+interface Props {
+  variant?: "underline" | "circle" | "loop" | "divider" | "star";
+  class?: string;
+}
+
+const { variant = "underline", class: className } = Astro.props;
+
+const svgByVariant = {
+  underline: underlineSvg,
+  circle: circleSvg,
+  loop: scribbleSvg,
+  divider: dividerSvg,
+  star: starSvg,
+};
+---
+
+<span
+  class:list={["journal-svg-fill inline-block text-ink", className]}
+  aria-hidden="true"
+  set:html={svgByVariant[variant]}
+/>

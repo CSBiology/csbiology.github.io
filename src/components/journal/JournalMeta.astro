@@ -1,0 +1,22 @@
+---
+interface Props {
+  date: string;
+  location?: string;
+  time?: string;
+  class?: string;
+}
+
+const { date, location, time, class: className } = Astro.props;
+---
+
+<p
+  class:list={[
+    "font-body text-xs font-semibold tracking-[0.15em] text-ink-muted uppercase",
+    className,
+  ]}
+>
+  <span class="block">{date}</span>
+  {(location || time) && (
+    <span class="block">{location}{time ? ` · ${time}` : ""}</span>
+  )}
+</p>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  columns?: 2 | 3 | 4;
+  label?: string;
+  class?: string;
+}
+
+const { columns = 3, label, class: className } = Astro.props;
+
+const gridClasses = {
+  2: "grid-cols-2",
+  3: "grid-cols-2 md:grid-cols-3",
+  4: "grid-cols-2 md:grid-cols-4",
+};
+---
+
+<section class:list={["border border-line bg-paper-dark p-6 shadow-sm", className]}>
+  {label && (
+    <p class="mb-4 font-mono text-xs tracking-wide text-ink-muted uppercase">{label}</p>
+  )}
+  <div class:list={["grid gap-6", gridClasses[columns]]}>
+    <slot />
+  </div>
+</section>

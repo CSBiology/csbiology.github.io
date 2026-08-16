@@ -1,0 +1,29 @@
+---
+import { rotationClasses, type Rotation } from "@lib/journal";
+
+interface Props {
+  variant?: "plain" | "note" | "card" | "sketch";
+  rotation?: Rotation;
+  class?: string;
+}
+
+const { variant = "plain", rotation = "none", class: className } = Astro.props;
+
+const variantClasses = {
+  plain: "p-6",
+  note: "p-6 font-hand",
+  card: "p-8",
+  sketch: "p-4",
+};
+---
+
+<div
+  class:list={[
+    "bg-paper border border-line shadow-sm",
+    variantClasses[variant],
+    rotationClasses[rotation],
+    className,
+  ]}
+>
+  <slot />
+</div>

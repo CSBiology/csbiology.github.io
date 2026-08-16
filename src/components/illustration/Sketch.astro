@@ -1,0 +1,30 @@
+---
+import Paper from "../paper/Paper.astro";
+import Handwritten from "../typography/Handwritten.astro";
+import type { Rotation } from "@lib/journal";
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  rotation?: Rotation;
+  annotation?: string;
+  class?: string;
+}
+
+const { src, alt, caption, rotation = "none", annotation, class: className } = Astro.props;
+---
+
+<figure class:list={[className]}>
+  <Paper variant="sketch" rotation={rotation}>
+    <img src={src} alt={alt} class="h-auto w-full" />
+  </Paper>
+  {caption && (
+    <figcaption class="mt-2 text-center font-hand text-sm text-ink-muted">{caption}</figcaption>
+  )}
+  {annotation && (
+    <Handwritten size="sm" color="accent" class="mt-1 block">
+      {annotation}
+    </Handwritten>
+  )}
+</figure>

@@ -1,0 +1,18 @@
+---
+import underlineSvg from "@assets/svg/underline.svg?raw";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["relative inline-block", className]}>
+  <slot />
+  <span
+    class="journal-svg-fill absolute inset-x-0 -bottom-[0.18em] h-[0.55em] text-accent-red"
+    aria-hidden="true"
+    set:html={underlineSvg}
+  />
+</span>

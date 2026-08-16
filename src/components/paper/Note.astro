@@ -1,0 +1,24 @@
+---
+import Paper from "./Paper.astro";
+import type { Rotation } from "@lib/journal";
+
+interface Props {
+  rotation?: Rotation;
+  accent?: "red" | "blue" | "yellow";
+  meta?: string;
+  class?: string;
+}
+
+const { rotation = "none", accent, meta, class: className } = Astro.props;
+
+const accentClasses = {
+  red: "text-accent-red",
+  blue: "text-accent-blue",
+  yellow: "text-accent-yellow",
+};
+---
+
+<Paper variant="note" rotation={rotation} class:list={[accent && accentClasses[accent], className]}>
+  <slot />
+  {meta && <p class="mt-3 font-sans text-xs text-ink-muted">{meta}</p>}
+</Paper>

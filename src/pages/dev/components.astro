@@ -1,0 +1,455 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Paper from "@components/paper/Paper.astro";
+import Note from "@components/paper/Note.astro";
+import Tape from "@components/paper/Tape.astro";
+import PaperClip from "@components/paper/PaperClip.astro";
+import Sketch from "@components/illustration/Sketch.astro";
+import Scribble from "@components/illustration/Scribble.astro";
+import Arrow from "@components/illustration/Arrow.astro";
+import ImageFrame from "@components/media/ImageFrame.astro";
+import Polaroid from "@components/media/Polaroid.astro";
+import ContactSheet from "@components/media/ContactSheet.astro";
+import Highlight from "@components/typography/Highlight.astro";
+import Underline from "@components/typography/Underline.astro";
+import Handwritten from "@components/typography/Handwritten.astro";
+import JournalHeader from "@components/journal/JournalHeader.astro";
+import JournalMeta from "@components/journal/JournalMeta.astro";
+import Marginalia from "@components/journal/Marginalia.astro";
+
+const sections = [
+  { id: "paper", label: "Paper" },
+  { id: "note", label: "Note" },
+  { id: "highlight", label: "Highlight" },
+  { id: "underline", label: "Underline" },
+  { id: "handwritten", label: "Handwritten" },
+  { id: "scribble", label: "Scribble" },
+  { id: "arrow", label: "Arrow" },
+  { id: "sketch", label: "Sketch" },
+  { id: "tape", label: "Tape" },
+  { id: "paperclip", label: "PaperClip" },
+  { id: "imageframe", label: "ImageFrame" },
+  { id: "polaroid", label: "Polaroid" },
+  { id: "contactsheet", label: "ContactSheet" },
+  { id: "journalheader", label: "JournalHeader" },
+  { id: "journalmeta", label: "JournalMeta" },
+  { id: "marginalia", label: "Marginalia" },
+];
+---
+
+<Layout>
+  <main data-theme="journal" class="paper-grain min-h-screen bg-paper-dark text-ink">
+    <div class="mx-auto max-w-6xl px-4 py-10 md:px-8">
+      <header class="paper-edge border border-line bg-paper p-6 shadow-sm md:p-10">
+        <JournalHeader
+          date="12 AUGUST 2026"
+          location="Elsenfeld"
+          time="18:42"
+          title="The component journal"
+          subtitle="Every primitive of the design system, gathered in one notebook."
+          annotation="living documentation — update it as you build"
+        />
+      </header>
+
+      <div class="mt-10 lg:grid lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <aside>
+          <nav aria-label="Component sections" class="mb-8 lg:mb-0 lg:sticky lg:top-6">
+            <div class="overflow-x-auto pb-2 lg:overflow-visible lg:pb-0">
+              <ul class="menu menu-horizontal menu-sm flex-nowrap gap-1 border border-line bg-paper shadow-sm lg:menu-vertical lg:w-full lg:flex-col lg:gap-0">
+                {
+                  sections.map(({ id, label }) => (
+                    <li>
+                      <a href={`#${id}`} class="whitespace-nowrap">{label}</a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </nav>
+        </aside>
+
+        <div class="space-y-20">
+          <section id="paper" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Paper</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              A reusable paper surface for notes, sketches and other physical-looking content. Never distressed by default.
+            </p>
+            <div class="mt-6 grid gap-8 sm:grid-cols-2">
+              <Paper>
+                <p class="font-body">
+                  The elm at the end of the street lost its last leaves on Tuesday. I counted them: eleven on the bench, the rest blown against the fence.
+                </p>
+              </Paper>
+              <Paper variant="note" rotation="left">
+                <p class="font-hand">picked up chestnuts, pocketed three</p>
+              </Paper>
+              <Paper variant="card" rotation="right">
+                <JournalMeta date="14 AUGUST 2026" location="Erlenbach" />
+                <p class="mt-3 font-body text-sm">
+                  Water level low again. The stones near the weir are dry enough to sit on.
+                </p>
+              </Paper>
+              <Paper variant="sketch">
+                <Scribble variant="circle" class="mx-auto h-20 w-20 text-ink" />
+                <p class="mt-3 text-center font-hand text-sm">practice circle — still wonky</p>
+              </Paper>
+            </div>
+            <p class="mt-6 font-mono text-xs text-ink-muted">
+              Variants: <kbd class="kbd kbd-sm">plain</kbd> <kbd class="kbd kbd-sm">note</kbd>{" "}
+              <kbd class="kbd kbd-sm">card</kbd> <kbd class="kbd kbd-sm">sketch</kbd> · rotation:{" "}
+              <kbd class="kbd kbd-sm">none</kbd> <kbd class="kbd kbd-sm">left</kbd>{" "}
+              <kbd class="kbd kbd-sm">right</kbd>
+            </p>
+          </section>
+
+          <section id="note" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Note</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              A handwritten note surface for short thoughts and reminders.
+            </p>
+            <div class="mt-6 grid gap-8 sm:grid-cols-2">
+              <Note>Remember to come back here in autumn.</Note>
+              <Note rotation="left">
+                The bakery on the corner has started selling quince bread. Two loaves, Sunday morning, before the queue.
+              </Note>
+              <Note accent="red" rotation="right">
+                do not forget: turn off the pump in the greenhouse
+              </Note>
+              <Note accent="blue" meta="pinned above the desk — 03.08.">
+                Measure the window twice before ordering the new pane.
+              </Note>
+            </div>
+            <p class="mt-6 font-mono text-xs text-ink-muted">
+              Props: <kbd class="kbd kbd-sm">rotation</kbd> <kbd class="kbd kbd-sm">accent</kbd>{" "}
+              <kbd class="kbd kbd-sm">meta</kbd>
+            </p>
+          </section>
+
+          <section id="highlight" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Highlight</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Inline emphasis that looks like a real marker stroke, not a rectangle.
+            </p>
+            <div class="mt-6 space-y-4 max-w-2xl font-body">
+              <p>
+                After three days of rain, the towpath was <Highlight>muddy but passable</Highlight>.
+              </p>
+              <p>
+                Checked off before leaving: <Highlight>batteries</Highlight>, <Highlight>film</Highlight>,{" "}
+                <Highlight>milk</Highlight>. The camera strap still smells of river.
+              </p>
+              <p>
+                The sign said <Highlight>closed from noon</Highlight>, so we ate the sandwiches on the steps and
+                called it a plan anyway.
+              </p>
+            </div>
+          </section>
+
+          <section id="underline" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Underline</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Hand-drawn emphasis below the text, SVG stroke rather than a CSS border.
+            </p>
+            <div class="mt-6 space-y-4 max-w-2xl font-body">
+              <p>The heron did not move for <Underline>twenty minutes</Underline>.</p>
+              <p>
+                <Underline>Measure twice</Underline>, cut once — the window frame agrees with neither.
+              </p>
+            </div>
+          </section>
+
+          <section id="handwritten" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Handwritten</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Explicit handwritten typography for short annotations. Never for long-form text.
+            </p>
+            <div class="mt-6 space-y-3">
+              <Handwritten size="sm">field notes, small — for margins and corners</Handwritten>
+              <Handwritten size="md">the standard size for a note in the margin</Handwritten>
+              <Handwritten size="lg" color="accent-red">READ THIS AGAIN</Handwritten>
+              <Handwritten size="md" color="accent-blue">— and again</Handwritten>
+            </div>
+            <p class="mt-6 font-mono text-xs text-ink-muted">
+              Sizes: <kbd class="kbd kbd-sm">sm</kbd> <kbd class="kbd kbd-sm">md</kbd>{" "}
+              <kbd class="kbd kbd-sm">lg</kbd> · colors: token names only
+            </p>
+          </section>
+
+          <section id="scribble" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Scribble</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Reusable decorative strokes. One stroke language, tuned in a single place.
+            </p>
+            <div class="mt-6 flex flex-wrap items-end gap-8">
+              <div class="text-center">
+                <Scribble variant="circle" class="h-16 w-16 text-ink" />
+                <p class="mt-2 font-mono text-xs text-ink-muted">circle</p>
+              </div>
+              <div class="text-center">
+                <Scribble variant="loop" class="h-10 w-24 text-ink" />
+                <p class="mt-2 font-mono text-xs text-ink-muted">loop</p>
+              </div>
+              <div class="text-center">
+                <Scribble variant="star" class="h-14 w-14 text-ink" />
+                <p class="mt-2 font-mono text-xs text-ink-muted">star</p>
+              </div>
+              <div class="text-center">
+                <Scribble variant="divider" class="h-4 w-40 text-line" />
+                <p class="mt-2 font-mono text-xs text-ink-muted">divider</p>
+              </div>
+              <div class="text-center">
+                <Scribble variant="underline" class="h-5 w-48 text-accent-red" />
+                <p class="mt-2 font-mono text-xs text-ink-muted">underline</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="arrow" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Arrow</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Hand-drawn annotation arrows, consistent with the Scribble stroke language.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-6">
+              <Arrow direction="up" class="h-10 w-10 text-ink" />
+              <Arrow direction="down" class="h-10 w-10 text-ink" />
+              <Arrow direction="left" class="h-10 w-10 text-ink" />
+              <Arrow direction="right" class="h-10 w-10 text-ink" />
+            </div>
+          </section>
+
+          <section id="sketch" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Sketch</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              A wrapper for hand-drawn illustrations: paper surface, caption, optional annotation.
+            </p>
+            <div class="mt-6 grid gap-8 sm:grid-cols-2">
+              <Sketch
+                src="/illustrations/river.svg"
+                alt="Ink sketch of the Main river with hills behind it"
+                caption="The bend behind the mill"
+              />
+              <Sketch
+                src="/illustrations/leaf-branch.svg"
+                alt="Ink sketch of a branch with two leaves"
+                rotation="right"
+                annotation="pressed between pages 44 and 45"
+              />
+            </div>
+          </section>
+
+          <section id="tape" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Tape</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Subtle masking tape for attaching things to the page. Needs a relative parent.
+            </p>
+            <div class="mt-6 grid gap-10 sm:grid-cols-2">
+              <div class="relative">
+                <Paper variant="sketch">
+                  <Scribble variant="star" class="h-16 w-16 text-ink" />
+                  <p class="mt-2 font-hand text-sm">star chart, unfinished</p>
+                </Paper>
+                <Tape position="top-left" />
+              </div>
+              <div class="relative">
+                <Paper variant="sketch">
+                  <p class="font-hand">receipt from the ferry, keep</p>
+                </Paper>
+                <Tape position="top-right" />
+              </div>
+              <div class="relative">
+                <Paper variant="sketch">
+                  <p class="font-hand">map section, folded twice</p>
+                </Paper>
+                <Tape position="bottom-left" />
+              </div>
+              <div class="relative">
+                <Paper variant="sketch">
+                  <p class="font-hand">bus ticket, day pass</p>
+                </Paper>
+                <Tape position="bottom-right" />
+              </div>
+            </div>
+          </section>
+
+          <section id="paperclip" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">PaperClip</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              A decorative clip for bundles and single sheets. Position it yourself.
+            </p>
+            <div class="relative mt-6 max-w-sm">
+              <Paper>
+                <p class="font-body text-sm">Bundle: seed catalogue, river map, two letters.</p>
+              </Paper>
+              <PaperClip class="absolute -top-5 right-4 h-12 w-9" />
+            </div>
+          </section>
+
+          <section id="imageframe" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">ImageFrame</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              General image presentation. The visual treatment lives here, not in the pages.
+            </p>
+            <div class="mt-6 grid gap-8 sm:grid-cols-2">
+              <ImageFrame
+                src="/illustrations/camera.svg"
+                alt="Ink sketch of an old camera on a strap"
+                caption="The borrowed Praktica, drawn from memory"
+              />
+              <ImageFrame
+                src="/illustrations/river.svg"
+                alt="Ink sketch of the Main river"
+                variant="clipped"
+                rotation="right"
+              />
+              <ImageFrame
+                src="/illustrations/leaf-branch.svg"
+                alt="Ink sketch of a branch with leaves"
+                variant="sketch"
+                rotation="left"
+              />
+              <ImageFrame
+                src="/illustrations/river.svg"
+                alt="Ink sketch of the Main river with hills"
+                variant="printed"
+                rotation="left"
+                caption="Printed and pinned above the table"
+              />
+            </div>
+            <p class="mt-6 font-mono text-xs text-ink-muted">
+              Variants: <kbd class="kbd kbd-sm">printed</kbd> <kbd class="kbd kbd-sm">clipped</kbd>{" "}
+              <kbd class="kbd kbd-sm">sketch</kbd> · <kbd class="kbd kbd-sm">alt</kbd> is required
+            </p>
+          </section>
+
+          <section id="polaroid" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Polaroid</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              The instant-photo treatment with its handwritten caption area.
+            </p>
+            <div class="mt-6 grid gap-10 sm:grid-cols-2">
+              <Polaroid
+                src="/illustrations/river.svg"
+                alt="Ink sketch of the Main river"
+                caption="waiting for the 7:04"
+              />
+              <Polaroid
+                src="/illustrations/camera.svg"
+                alt="Ink sketch of a camera"
+                rotation="left"
+                caption="it still works"
+              />
+              <Polaroid
+                src="/illustrations/leaf-branch.svg"
+                alt="Ink sketch of a leaf branch"
+                rotation="right"
+                caption="found on the path"
+              />
+              <Polaroid
+                src="/illustrations/river.svg"
+                alt="Ink sketch of the Main river with hills"
+                caption="sun over the water"
+                tape
+              />
+            </div>
+          </section>
+
+          <section id="contactsheet" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">ContactSheet</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              A print-sheet grid for composing several frames.
+            </p>
+            <div class="mt-6">
+              <ContactSheet label="film roll no. 3 — sunday" columns={3}>
+                <Polaroid
+                  src="/illustrations/river.svg"
+                  alt="Ink sketch of the Main river"
+                  rotation="left"
+                  caption="frame 1"
+                />
+                <Polaroid
+                  src="/illustrations/leaf-branch.svg"
+                  alt="Ink sketch of a leaf branch"
+                  caption="frame 2"
+                />
+                <Polaroid
+                  src="/illustrations/camera.svg"
+                  alt="Ink sketch of a camera"
+                  rotation="right"
+                  caption="frame 3"
+                />
+              </ContactSheet>
+            </div>
+          </section>
+
+          <section id="journalheader" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">JournalHeader</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              The standard journal entry heading — the hierarchy all journal pages share.
+            </p>
+            <div class="mt-6 space-y-12">
+              <JournalHeader
+                date="16 MAY 2026"
+                location="Miltenberg"
+                time="09:12"
+                title="The market sets up early"
+                subtitle="Crates of asparagus, two accordion players, one crane."
+                annotation="arrive before the bells"
+              />
+              <JournalHeader date="02 JUNE 2026" title="Quince blossom" />
+            </div>
+          </section>
+
+          <section id="journalmeta" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">JournalMeta</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              The small date / location / time line used inside headers and on cards.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-10">
+              <JournalMeta date="21 JUNE 2026" />
+              <JournalMeta date="21 JUNE 2026" location="Erlenbach" />
+              <JournalMeta date="21 JUNE 2026" location="Erlenbach" time="06:40" />
+            </div>
+          </section>
+
+          <section id="marginalia" class="scroll-mt-24">
+            <h2 class="font-body text-2xl font-semibold">Marginalia</h2>
+            <p class="mt-1 max-w-2xl text-ink-muted">
+              Side notes on desktop that collapse into the reading flow on mobile. No JavaScript.
+            </p>
+            <div class="mt-6 space-y-14">
+              <Marginalia side="right">
+                <p class="font-body max-w-xl">
+                  The path along the old railway line is overgrown in June but still passable. By July the brambles
+                  close over the rails like a lid, and the only sign of the line is the hum of bees.
+                </p>
+                <p slot="note" class="font-hand text-accent">
+                  saw the kingfisher here <Arrow direction="down" class="mt-1 block h-6 w-6 text-accent" />
+                </p>
+              </Marginalia>
+
+              <Marginalia side="left">
+                <p class="font-body max-w-xl">
+                  The kiosk at the lock sells coffee from six. On foggy mornings the lock keeper props the door open
+                  with a fire extinguisher, and the smell of coffee reaches the bridge.
+                </p>
+                <p slot="note" class="font-hand text-accent-blue">
+                  ask M. about the flat roof
+                </p>
+              </Marginalia>
+
+              <Marginalia side="right">
+                <p class="font-body max-w-xl">
+                  At dusk the bats take the same route as the cyclists, skimming the hedge line between the cemetery
+                  and the allotments.
+                </p>
+                <p slot="note" class="font-hand text-accent-red">
+                  check again next week, same time
+                </p>
+              </Marginalia>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

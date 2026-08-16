@@ -1,0 +1,61 @@
+@theme {
+  --color-paper: oklch(97% 0.01 85);
+  --color-paper-dark: oklch(93% 0.015 85);
+  --color-paper-muted: oklch(90% 0.01 85);
+  --color-ink: oklch(28% 0.03 60);
+  --color-ink-muted: oklch(45% 0.025 60);
+  --color-accent: oklch(55% 0.11 35);
+  --color-accent-red: oklch(60% 0.16 25);
+  --color-accent-blue: oklch(50% 0.10 245);
+  --color-accent-yellow: oklch(85% 0.14 95);
+  --color-line: oklch(80% 0.02 85);
+
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-sans: system-ui, "Segoe UI", sans-serif;
+  --font-hand: "Segoe Script", "Bradley Hand", "Comic Sans MS", cursive;
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+.journal-marker {
+  position: relative;
+  z-index: 0;
+  padding: 0 0.15em;
+}
+
+.journal-svg-fill svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.journal-tape {
+  clip-path: polygon(
+    2% 8%,
+    20% 3%,
+    45% 6%,
+    70% 2%,
+    98% 7%,
+    96% 92%,
+    75% 97%,
+    50% 94%,
+    25% 98%,
+    4% 93%
+  );
+}
+
+.journal-marker::before {
+  content: "";
+  position: absolute;
+  inset: 0.12em -0.08em 0.04em;
+  z-index: -1;
+  background: linear-gradient(
+    100deg,
+    transparent 1%,
+    oklch(85% 0.14 95 / 0.85) 7%,
+    oklch(85% 0.14 95 / 0.5) 45%,
+    oklch(85% 0.14 95 / 0.75) 88%,
+    transparent 98%
+  );
+  transform: rotate(-1.1deg) scaleX(1.03);
+  border-radius: 0.05em 0.35em 0.25em 0.1em;
+}

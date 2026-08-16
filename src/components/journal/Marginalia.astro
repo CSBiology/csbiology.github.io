@@ -1,0 +1,17 @@
+---
+interface Props {
+  side?: "left" | "right";
+  class?: string;
+}
+
+const { side = "right", class: className } = Astro.props;
+---
+
+<div class:list={["grid grid-cols-1 gap-4 lg:grid-cols-[14rem_1fr_14rem] lg:gap-8", className]}>
+  <div class="lg:col-start-2">
+    <slot />
+  </div>
+  <div class:list={[side === "left" ? "lg:col-start-1" : "lg:col-start-3", "lg:row-start-1"]}>
+    <slot name="note" />
+  </div>
+</div>

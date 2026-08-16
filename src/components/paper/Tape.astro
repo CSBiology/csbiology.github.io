@@ -1,0 +1,24 @@
+---
+interface Props {
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  class?: string;
+}
+
+const { position = "top-left", class: className } = Astro.props;
+
+const positionClasses = {
+  "top-left": "left-[-0.75rem] top-[-0.5rem] -rotate-[8deg]",
+  "top-right": "right-[-0.75rem] top-[-0.5rem] rotate-[7deg]",
+  "bottom-left": "left-[-0.75rem] bottom-[-0.5rem] rotate-[6deg]",
+  "bottom-right": "right-[-0.75rem] bottom-[-0.5rem] -rotate-[7deg]",
+};
+---
+
+<span
+  class:list={[
+    "journal-tape absolute z-10 block h-7 w-20 bg-accent-yellow/45 opacity-80 shadow-sm",
+    positionClasses[position],
+    className,
+  ]}
+  aria-hidden="true"
+/>

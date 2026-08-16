@@ -1,0 +1,23 @@
+---
+import arrowSvg from "@assets/svg/arrow.svg?raw";
+
+interface Props {
+  direction?: "up" | "down" | "left" | "right";
+  class?: string;
+}
+
+const { direction = "down", class: className } = Astro.props;
+
+const rotationClasses = {
+  up: "",
+  down: "rotate-180",
+  left: "-rotate-90",
+  right: "rotate-90",
+};
+---
+
+<span
+  class:list={["journal-svg-fill inline-block text-ink", rotationClasses[direction], className]}
+  aria-hidden="true"
+  set:html={arrowSvg}
+/>

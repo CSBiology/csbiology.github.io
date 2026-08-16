@@ -1,4 +1,41 @@
 @import "tailwindcss";
- @plugin "daisyui" {
-   themes: silk --default, dark --prefersdark;
- }
+@import "../styles/global.css";
+@import "../styles/journal.css";
+@import "../styles/textures.css";
+
+@plugin "daisyui" {
+  themes: silk --default, dark --prefersdark, journal;
+}
+
+@plugin "daisyui/theme" {
+  name: "journal";
+  color-scheme: light;
+  --color-base-100: oklch(97% 0.01 85);
+  --color-base-200: oklch(93% 0.015 85);
+  --color-base-300: oklch(90% 0.01 85);
+  --color-base-content: oklch(28% 0.03 60);
+  --color-primary: oklch(55% 0.11 35);
+  --color-primary-content: oklch(97% 0.01 85);
+  --color-secondary: oklch(50% 0.10 245);
+  --color-secondary-content: oklch(97% 0.01 85);
+  --color-accent: oklch(85% 0.14 95);
+  --color-accent-content: oklch(28% 0.03 60);
+  --color-neutral: oklch(28% 0.03 60);
+  --color-neutral-content: oklch(97% 0.01 85);
+  --color-info: oklch(60% 0.08 220);
+  --color-info-content: oklch(97% 0.01 85);
+  --color-success: oklch(60% 0.12 145);
+  --color-success-content: oklch(97% 0.01 85);
+  --color-warning: oklch(80% 0.14 85);
+  --color-warning-content: oklch(28% 0.03 60);
+  --color-error: oklch(60% 0.16 25);
+  --color-error-content: oklch(97% 0.01 85);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}

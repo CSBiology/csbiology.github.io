@@ -1,0 +1,15 @@
+---
+import paperclipSvg from "@assets/svg/paperclip.svg?raw";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span
+  class:list={["journal-svg-fill inline-block text-ink-muted", className]}
+  aria-hidden="true"
+  set:html={paperclipSvg}
+/>

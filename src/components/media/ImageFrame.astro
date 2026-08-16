@@ -1,0 +1,49 @@
+---
+import Paper from "../paper/Paper.astro";
+import { rotationClasses, type Rotation } from "@lib/journal";
+
+interface Props {
+  src: string;
+  alt: string;
+  variant?: "printed" | "clipped" | "sketch";
+  caption?: string;
+  rotation?: Rotation;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  variant = "printed",
+  caption,
+  rotation = "none",
+  class: className,
+} = Astro.props;
+---
+
+<figure class:list={[className]}>
+  {
+    variant === "printed" && (
+      <div class:list={["border border-line bg-paper p-3 shadow-sm", rotationClasses[rotation]]}>
+        <img src={src} alt={alt} class="block h-auto w-full" />
+      </div>
+    )
+  }
+  {
+    variant === "clipped" && (
+      <div class:list={["overflow-hidden rounded-sm border border-line shadow-sm", rotationClasses[rotation]]}>
+        <img src={src} alt={alt} class="block h-auto w-full" />
+      </div>
+    )
+  }
+  {
+    variant === "sketch" && (
+      <Paper variant="sketch" rotation={rotation}>
+        <img src={src} alt={alt} class="block h-auto w-full" />
+      </Paper>
+    )
+  }
+  {caption && (
+    <figcaption class="mt-2 text-center font-sans text-xs text-ink-muted">{caption}</figcaption>
+  )}
+</figure>
